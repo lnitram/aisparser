@@ -14,7 +14,7 @@ package com.aisparser;
  * Position Report
  * 
  */
-public class Message2 extends Messages {
+public class Message02 extends Messages {
     int            nav_status;        // 4 bits  : Navigational Status
     int			   rot;               // 8 bits  : Rate of Turn   
     int            sog;               // 10 bits : Speed Over Ground
@@ -46,7 +46,7 @@ public class Message2 extends Messages {
     public int slot_timeout() { return this.slot_timeout; }
     public int sub_message() { return this.sub_message; }
     
-	public Message2()
+	public Message02()
 	{
 		super();
 	}

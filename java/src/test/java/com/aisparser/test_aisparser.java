@@ -45,7 +45,7 @@ public class test_aisparser {
 			result = vdm_message.add("!AIVDM,1,1,,B,19NS7Sp02wo?HETKA2K6mUM20<L=,0*27\r\n");
 			out.printf("result = %d\n", result);
 			
-			Message1 msg = new Message1();
+			Message01 msg = new Message01();
 			msg.parse( vdm_message.sixbit() );
 		} catch (Exception e) {
 			out.printf("Error: %s\n", e.getMessage());
@@ -57,7 +57,7 @@ public class test_aisparser {
 			result = vdm_message.add("!AIVDM,2,2,6,B,1KUDhH888888880,2*6A");
 			out.printf("result = %d\n", result);
 			
-			Message5 msg = new Message5();
+			Message05 msg = new Message05();
 			msg.parse( vdm_message.sixbit() );
 			
 		} catch (Exception e) {

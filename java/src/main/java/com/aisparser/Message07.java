@@ -13,7 +13,7 @@ package com.aisparser;
  * Binary Acknowledgement
  * 
  */
-public class Message7 extends Messages {
+public class Message07 extends Messages {
     int    spare;             // 2 bits   : Spare
     long   destid_1;          // 30 bits  : Destination MMSI 1
     int    sequence_1;        // 2 bits   : Sequence Number 1
@@ -36,7 +36,7 @@ public class Message7 extends Messages {
     public int sequence_4() { return this.sequence_4; }
     public int num_acks() { return this.num_acks; }
     
-	public Message7()
+	public Message07()
 	{
 		super();
 	}

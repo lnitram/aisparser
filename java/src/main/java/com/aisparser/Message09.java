@@ -14,7 +14,7 @@ package com.aisparser;
  * Standard SAR Aircraft Position Report
  * 
  */
-public class Message9 extends Messages {
+public class Message09 extends Messages {
     int            altitude;          // 12 bits  : Altitude
     int            sog;               // 10 bits  : Speed Over Ground
     int            pos_acc;           // 1 bit    : Position Accuracy
@@ -46,7 +46,7 @@ public class Message9 extends Messages {
     public Sotdma sotdma_state() { return this.sotdma_state; }
     public Itdma itdma_state() { return this.itdma_state; }
     
-	public Message9()
+	public Message09()
 	{
 		super();
 	}

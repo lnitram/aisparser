@@ -7,16 +7,16 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 @Ignore
-public class Message6Test {
+public class Message06Test {
 
 	Vdm vdm_message;
-	Message6 msg;
+	Message06 msg;
 	int result;
 
 	@Test
 	public void testParse() {
 		vdm_message = new Vdm();
-		msg = new Message6();
+		msg = new Message06();
 
 		fail("Not yet implemented - Need test data");
 		

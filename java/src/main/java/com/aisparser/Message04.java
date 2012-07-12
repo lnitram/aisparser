@@ -14,7 +14,7 @@ package com.aisparser;
  * Base Station Report
  * 
  */
-public class Message4 extends Messages {
+public class Message04 extends Messages {
     int             utc_year;          // 14 bits : UTC Year
     int             utc_month;         // 4 bits  : UTC Month
     int             utc_day;           // 5 bits  : UTC Day
@@ -47,7 +47,7 @@ public class Message4 extends Messages {
     public int sub_message() { return this.sub_message; }
     
     
-	public Message4()
+	public Message04()
 	{
 		super();
 	}

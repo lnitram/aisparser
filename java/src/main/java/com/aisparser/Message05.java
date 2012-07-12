@@ -13,7 +13,7 @@ package com.aisparser;
  * Static and Voyage Related Data
  * 
  */
-public class Message5 extends Messages {
+public class Message05 extends Messages {
     int            version;           // 2 bits          : AIS Version
     long           imo;               // 30 bits         : IMO Number
     String         callsign;          // 7x6 (42) bits   : Callsign
@@ -47,7 +47,7 @@ public class Message5 extends Messages {
     public int spare() { return this.spare; }
     
     
-	public Message5()
+	public Message05()
 	{
 		super();
 	}

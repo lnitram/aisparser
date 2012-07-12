@@ -3,16 +3,16 @@ package com.aisparser;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class Message7Test {
+public class Message07Test {
 
 	Vdm vdm_message;
-	Message7 msg;
+	Message07 msg;
 	int result;
 
 	@Test
 	public void testParse() {
 		vdm_message = new Vdm();
-		msg = new Message7();
+		msg = new Message07();
 
 		try {
 			result = vdm_message.add("!AIVDM,1,1,,A,703Owpi9lmaQ,0*3B");

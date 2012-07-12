@@ -1,7 +1,7 @@
 package com.aisparser;
 /**
  * AIS Parser SDK
- * AIS Message 3 Class
+ * AIS Message 1 Class
  * Copyright 2008 by Brian C. Lane <bcl@brianlane.com>
  * All Rights Reserved
  * 
@@ -10,11 +10,11 @@ package com.aisparser;
 
 
 /**
- * AIS Message 3 class
+ * AIS Message 1 class
  * Position Report
  * 
  */
-public class Message3 extends Messages {
+public class Message01 extends Messages {
     int            nav_status;        // 4 bits  : Navigational Status
     int			   rot;               // 8 bits  : Rate of Turn   
     int            sog;               // 10 bits : Speed Over Ground
@@ -27,9 +27,8 @@ public class Message3 extends Messages {
     int            spare;             // 1 bit   : Spare
     int            raim;              // 1 bit   : RAIM flag
     int            sync_state;        // 2 bits  : SOTDMA sync state
-    int            slot_increment;    // 13 bits : ITDMA Slot Increment
-    int            num_slots;         // 3 bits  : ITDMA Number of Slots
-    int            keep;              // 1 bit   : ITDMA Keep Flag
+    int            slot_timeout;      // 3 bits  : SOTDMA Slot Timeout
+    int            sub_message;       // 14 bits : SOTDMA sub-message
     
     public int nav_status() { return this.nav_status; }
     public int rot() { return this.rot; }
@@ -44,12 +43,10 @@ public class Message3 extends Messages {
     public int spare() { return this.spare; }
     public int raim() { return this.raim; }
     public int sync_state() { return this.sync_state; }
-    public int slot_increment() { return this.slot_increment; }
-    public int num_slots() { return this.num_slots; }
-    public int keep() { return this.keep; }
-
+    public int slot_timeout() { return this.slot_timeout; }
+    public int sub_message() { return this.sub_message; }
     
-	public Message3()
+	public Message01()
 	{
 		super();
 	}
@@ -58,29 +55,28 @@ public class Message3 extends Messages {
 		throws SixbitsExhaustedException, AISMessageException
 	{
 		if (six_state.bit_length() != 168 )
-			throw new AISMessageException("Message 3 wrong length");
+			throw new AISMessageException("Message 1 wrong length");
 		
-		super.parse( 3, six_state );
+		super.parse( 1, six_state );
 		
-	    /* Parse the Message 3 */
-	    this.nav_status     = (int)  six_state.get( 4 );
-	    this.rot            = (int)  six_state.get( 8 );
-	    this.sog            = (int)  six_state.get( 10 );
-	    this.pos_acc        = (int)  six_state.get( 1 );
+	    /* Parse the Message 1 */
+	    this.nav_status   = (int)  six_state.get( 4 );
+	    this.rot          = (int)  six_state.get( 8 );
+	    this.sog          = (int)  six_state.get( 10 );
+	    this.pos_acc      = (int)  six_state.get( 1 );
 
 	    this.pos = new Position();
 	    this.pos.setLongitude((long) six_state.get( 28 ));
 	    this.pos.setLatitude((long) six_state.get( 27 ));
 
-	    this.cog            = (int)  six_state.get( 12 );
-	    this.true_heading   = (int)  six_state.get( 9 );
-	    this.utc_sec        = (int)  six_state.get( 6 );
-	    this.regional       = (int)  six_state.get( 4 );
-	    this.spare          = (int)  six_state.get( 1 );
-	    this.raim           = (int)  six_state.get( 1 );
-	    this.sync_state     = (int)  six_state.get( 2 );
-	    this.slot_increment = (int)  six_state.get( 13 );
-	    this.num_slots      = (int)  six_state.get( 3 );
-	    this.keep           = (int)  six_state.get(1);
+	    this.cog          = (int)  six_state.get( 12 );
+	    this.true_heading = (int)  six_state.get( 9 );
+	    this.utc_sec      = (int)  six_state.get( 6 );
+	    this.regional     = (int)  six_state.get( 4 );
+	    this.spare        = (int)  six_state.get( 1 );
+	    this.raim         = (int)  six_state.get( 1 );
+	    this.sync_state   = (int)  six_state.get( 2 );
+	    this.slot_timeout = (int)  six_state.get( 3 );
+	    this.sub_message  = (int)  six_state.get( 14 );
 	}
 }

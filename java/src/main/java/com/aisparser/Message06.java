@@ -14,7 +14,7 @@ package com.aisparser;
  * Binary Addressed Message
  * 
  */
-public class Message6 extends Messages {
+public class Message06 extends Messages {
     int            sequence;          // 2 bits   : Sequence number
     long           destination;       // 30 bits  : Destination MMSI
     int            retransmit;        // 1 bit    : Retransmit
@@ -29,7 +29,7 @@ public class Message6 extends Messages {
     public int app_id() { return this.app_id; }
     public Sixbit data() { return this.data; }
     
-	public Message6()
+	public Message06()
 	{
 		super();
 	}

@@ -13,7 +13,7 @@ package com.aisparser;
  * Binary Broadcast Message
  * 
  */
-public class Message8 extends Messages {
+public class Message08 extends Messages {
     int    spare;             // 2 bits   : Spare
     int    app_id;            // 16 bits  : Application ID
     Sixbit data;              // 952 bits : Data payload
@@ -22,7 +22,7 @@ public class Message8 extends Messages {
     public int app_id() { return this.app_id; }
     public Sixbit data() { return this.data; }
     
-	public Message8()
+	public Message08()
 	{
 		super();
 	}
