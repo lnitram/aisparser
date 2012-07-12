@@ -42,4 +42,22 @@ public class Message24Test {
 		assertEquals("spare", 0, msg.spare());
 		assertEquals("flags", 3, msg.flags());
 	}
+
+	@Test
+	public void testParse2() {
+		vdm_message = new Vdm();
+		msg = new Message24();
+
+		try {
+			result = vdm_message
+					.add("!AIVDM,1,1,,A,H39UMw0<Q8U=@T4r22222222220,2*66");
+			assertEquals("vdm add failed", 0, result);
+			msg.parse(vdm_message.sixbit());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+
+	}
 }
