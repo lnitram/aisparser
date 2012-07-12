@@ -128,10 +128,11 @@ public class Vdm {
 	            this.total = 0;
 	            this.sequence =0;
 	            this.num = 0;
-	            throw new VDMSentenceException("Out of sequence sentence");
+	            throw new OutOfSequenceException("Out of sequence sentence");
 	        }
 	        this.num++;
 		} else {
+			if (num > 1) throw new OutOfSequenceException("Out of sequence sentence");
 			this.total = total;
 	        this.num = num;
 	        this.sequence = sequence;
