@@ -211,6 +211,9 @@ public class Sixbit {
 	        } else if (fetch_bits > 0) {
 	            /* Ran out of bits */
 	            throw new SixbitsExhaustedException("Ran out of bits");
+	        } else if (this.padBits > 0) {
+	            result= (result >>this.padBits);
+	            return result;
 	        } else {
 	        	return result;
 	        }
