@@ -64,7 +64,7 @@ public class Message22 extends Messages {
 		
 		super.parse( 22, six_state );
 
-	    this.spare1         = (int)          six_state.get( 1  );
+	    this.spare1         = (int)          six_state.get( 2  );
 	    this.channel_a      = (int)           six_state.get( 12 );
 	    this.channel_b      = (int)           six_state.get( 12 );
 	    this.txrx_mode      = (int)          six_state.get( 4  );
@@ -80,6 +80,7 @@ public class Message22 extends Messages {
 	    this.bw_a           = (int)          six_state.get( 1  );
 	    this.bw_b           = (int)          six_state.get( 1  );
 	    this.tz_size        = (int)          six_state.get( 3  );
+	    this.spare2         = (int)          six_state.get(23);
 
 	    /* Is the position actually an address? */
 	    if (this.addressed == 1)
