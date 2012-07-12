@@ -41,6 +41,11 @@ public class Message07 extends Messages {
 		super();
 	}
 	
+	public Message07(Vdm vdm) throws SixbitsExhaustedException, AISMessageException {
+		this();
+		parse(vdm.sixbit());
+	}
+	
 	public void parse( Sixbit six_state )
 		throws SixbitsExhaustedException, AISMessageException
 	{

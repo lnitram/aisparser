@@ -42,6 +42,11 @@ public class Message23 extends Messages {
 		super();
 	}
 	
+	public Message23(Vdm vdm) throws SixbitsExhaustedException, AISMessageException {
+		this();
+		parse(vdm.sixbit());
+	}
+	
 	public void parse( Sixbit six_state )
 		throws SixbitsExhaustedException, AISMessageException
 	{
