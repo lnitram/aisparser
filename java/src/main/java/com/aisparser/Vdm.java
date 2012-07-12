@@ -8,28 +8,6 @@ package com.aisparser;
  * @author Brian C. Lane
  */
 
-
-class ChecksumFailedException extends Exception
-{
-	public ChecksumFailedException() {}
-	public ChecksumFailedException( String str )
-	{
-		super(str);
-	}
-}
-
-
-class VDMSentenceException extends Exception
-{
-	public VDMSentenceException() {}
-	public VDMSentenceException( String str )
-	{
-		super(str);
-	}
-}
-
-
-
 /**
  * VDM Class
  *

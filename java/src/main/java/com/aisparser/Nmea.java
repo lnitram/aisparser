@@ -9,26 +9,6 @@ package com.aisparser;
  *
  */
 
-class StartNotFoundException extends Exception
-{
-	public StartNotFoundException() {}
-	public StartNotFoundException( String str )
-	{
-		super(str);
-	}
-}
-
-
-class IllegalNMEACharacterException extends Exception
-{
-	public IllegalNMEACharacterException() {}
-	public IllegalNMEACharacterException( String str )
-	{
-		super(str);
-	}
-}
-
-
 /**
  * NMEA message class
  * 

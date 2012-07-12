@@ -8,16 +8,6 @@ package com.aisparser;
  * @author Brian C. Lane
  */
 
-class AISMessageException extends Exception
-{
-	public AISMessageException() {}
-	public AISMessageException( String str )
-	{
-		super(str);
-	}
-}
-
-
 /**
  * AIS Message base class
  * 
