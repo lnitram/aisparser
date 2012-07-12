@@ -1,30 +1,38 @@
 package com.aisparser;
 
-import junit.framework.TestCase;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-public class SixbitTest extends TestCase {
+public class SixbitTest {
 
 	private Sixbit six_state;
 	
-	protected void setUp() {
+	@Before
+	public void setUp() {
 		six_state = new Sixbit();
 		six_state.init("");
 		six_state.add("19NS7Sp02wo?HETKA2K6mUM20<L=");
 	}
 	
-	protected void tearDown() {
+	@After
+	public void tearDown() {
 		six_state = null;
 	}
 	
+	@Test
 	public void testBit_length() {
 		assertEquals("Length should be 168", 168, six_state.bit_length());
 	}
 
+	@Test
 	public void testLength() {
 		
 		assertEquals("Length should be 28", 28, six_state.length());
 	}
 
+	@Test
 	public void testBinfrom6bit() {
 		int v = 0x30;
 		int r = 0x00;
@@ -51,6 +59,7 @@ public class SixbitTest extends TestCase {
 		}
 	}
 
+	@Test
 	public void testBinto6bit() {
 		int v = 0x00;
 		int r = 0x30;
@@ -78,6 +87,7 @@ public class SixbitTest extends TestCase {
 		}
 	}
 
+	@Test
 	public void testAis2ascii() {
 		int v = 0x00;
 		int r = 0x40;
@@ -105,6 +115,7 @@ public class SixbitTest extends TestCase {
 		}
 	}
 
+	@Test
 	public void testGet() {
 		int msgid = 0;
 		
@@ -118,6 +129,7 @@ public class SixbitTest extends TestCase {
 		// Need more tests
 	}
 
+	@Test
 	public void testGet_string() {
 		String s;
 		
@@ -125,5 +137,4 @@ public class SixbitTest extends TestCase {
 		s = six_state.get_string(4);
 		assertEquals("Failed to get AIS string ", "TEST", s);
 	}
-
 }

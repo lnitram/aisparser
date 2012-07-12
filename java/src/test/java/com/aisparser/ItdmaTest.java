@@ -1,9 +1,13 @@
 package com.aisparser;
 
-import junit.framework.TestCase;
+import org.junit.Ignore;
+import org.junit.Test;
+import static org.junit.Assert.fail;
 
-public class ItdmaTest extends TestCase {
+@Ignore
+public class ItdmaTest {
 
+	@Test
 	public void testParse() {
 		fail("Not yet implemented");
 	}

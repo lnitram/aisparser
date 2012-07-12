@@ -1,13 +1,15 @@
 package com.aisparser;
 
-import junit.framework.TestCase;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-public class Message12Test extends TestCase {
+public class Message12Test {
 
 	Vdm vdm_message;
 	Message12 msg;
 	int result;
 
+	@Test
 	public void testParse() {
 		vdm_message = new Vdm();
 		msg = new Message12();
@@ -15,12 +17,12 @@ public class Message12Test extends TestCase {
 		try {
 			result = vdm_message.add("!AIVDM,1,1,,A,<03Owph00002QG51D85BP1<5BDQP,0*7D");
 			assertEquals( "vdm add failed", 0, result );
-			 
+
 			msg.parse( vdm_message.sixbit() );
 		} catch (Exception e) {
 			fail(e.getMessage());
 		}
-		
+
 		assertEquals( "msgid", 12, msg.msgid());
 		assertEquals( "repeat", 0, msg.repeat());
 		assertEquals( "userid", 3669987, msg.userid());
@@ -28,7 +30,5 @@ public class Message12Test extends TestCase {
 		assertEquals( "destination", 0, msg.destination());
 		assertEquals( "retransmit", 1, msg.retransmit());
 		assertEquals( "message", "!WEATHER ALERT! ", msg.message());
-		
 	}
-
 }

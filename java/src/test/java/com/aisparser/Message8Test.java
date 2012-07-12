@@ -1,13 +1,15 @@
 package com.aisparser;
 
-import junit.framework.TestCase;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-public class Message8Test extends TestCase {
+public class Message8Test {
 
 	Vdm vdm_message;
 	Message8 msg;
 	int result;
 	
+	@Test
 	public void testParse() {
 		vdm_message = new Vdm();
 		 msg = new Message8();

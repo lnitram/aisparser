@@ -1,13 +1,17 @@
 package com.aisparser;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
-public class Message13Test extends TestCase {
+import org.junit.Test;
+
+public class Message13Test {
 
 	Vdm vdm_message;
 	Message13 msg;
 	int result;
 
+	@Test
 	public void testParse() {
 		vdm_message = new Vdm();
 		msg = new Message13();
@@ -15,7 +19,7 @@ public class Message13Test extends TestCase {
 		try {
 			result = vdm_message.add("!AIVDM,1,1,,A,=03Owpi;Eo7`,0*7F");
 			assertEquals( "vdm add failed", 0, result );
-			 
+
 			msg.parse( vdm_message.sixbit() );
 		} catch (Exception e) {
 			fail(e.getMessage());
@@ -28,7 +32,5 @@ public class Message13Test extends TestCase {
 		assertEquals( "spare", 0, msg.spare());
 		assertEquals( "destid_1", 316005498, msg.destid_1());
 		assertEquals( "sequence_1", 0, msg.sequence_1());
-
 	}
-
 }

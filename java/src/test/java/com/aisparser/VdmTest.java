@@ -1,20 +1,26 @@
 package com.aisparser;
 
-import static java.lang.System.out;
-import junit.framework.TestCase;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-public class VdmTest extends TestCase {
+
+public class VdmTest {
 
 	Vdm vdm_message;
 	
-	protected void setUp() {
+	@Before
+	public void setUp() {
 		vdm_message = new Vdm();
 	}
 	
-	protected void tearDown() {
+	@After
+	public void tearDown() {
 		vdm_message = null;
 	}
 	
+	@Test
 	public void testMsgid() {
 		int result;
 		
@@ -27,6 +33,7 @@ public class VdmTest extends TestCase {
 		}
 	}
 
+	@Test
 	public void testAdd() {
 		int result;
 		

@@ -1,8 +1,13 @@
 package com.aisparser;
 
-import junit.framework.TestCase;
+import org.junit.Ignore;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-public class SotdmaTest extends TestCase {
+@Ignore
+public class SotdmaTest {
+
+	@Test
 	public void testParse() {
 		fail("Not yet implemented");
 	}

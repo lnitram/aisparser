@@ -1,19 +1,27 @@
 package com.aisparser;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
-public class NmeaTest extends TestCase {
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class NmeaTest {
 
 	Nmea	nmea_message;
 	
-	protected void setUp() {
+	@Before
+	public void setUp() {
 		nmea_message = new Nmea();
 	}
 	
-	protected void tearDown() {
+	@After
+	public void tearDown() {
 		nmea_message = null;
 	}
 	
+	@Test
 	public void testFind_start() {
 		nmea_message.init("!AIVDM,1,1,,B,19NS7Sp02wo?HETKA2K6mUM20<L=,0*27\r\n");
 		try {
@@ -38,6 +46,7 @@ public class NmeaTest extends TestCase {
 		}
 	}
 
+	@Test
 	public void testCalculateChecksum() {
 		nmea_message.init("!AIVDM,1,1,,B,19NS7Sp02wo?HETKA2K6mUM20<L=,0*27\r\n");
 		try {
@@ -49,6 +58,7 @@ public class NmeaTest extends TestCase {
 		}
 	}
 
+	@Test
 	public void testCheckChecksum() {
 		nmea_message.init("!AIVDM,1,1,,B,19NS7Sp02wo?HETKA2K6mUM20<L=,0*27\r\n");
 		assertEquals("Checksum failed", 0, nmea_message.checkChecksum());
