@@ -17,43 +17,38 @@ package com.aisparser;
  * 
  */
 public class Position {
-	long	longitude;
-	long	latitude;
-	
-	public Position()
+	private double	factor;
+	private long	longitude;
+	private long	latitude;
+
+	public Position(double factor)
 	{
-		super();
+		this.factor = factor;
 	}
-	
+
 	public void setLongitude( long raw_longitude )
 	{
-	    /* Convert longitude to signed number */
-	    if( raw_longitude >= 0x8000000 )
-	    {
-	        this.longitude = 0x10000000 - raw_longitude;
-	        this.longitude *= -1;
-	    } else {
-	    	this.longitude = raw_longitude;
-	    }
+		this.longitude = raw_longitude;
 	}
-	
+
 	public void setLatitude( long raw_latitude )
 	{
-	    /* Convert latitude to signed number */
-	    if( raw_latitude >= 0x4000000 )
-	    {
-	        this.latitude = 0x8000000 - raw_latitude;
-	        this.latitude *= -1;
-	    } else {
-	    	this.latitude = raw_latitude;
-	    }
+		this.latitude = raw_latitude;
 	}
-	
+
+	public Double getLongitudeDeg() {
+		return this.longitude / factor;
+	}
+
+	public Double getLatitudeDeg() {
+		return this.latitude / factor;
+	}
+
 	public long longitude()
 	{
 		return this.longitude;
 	}
-	
+
 	public long latitude()
 	{
 		return this.latitude;

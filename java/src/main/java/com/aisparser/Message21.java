@@ -76,9 +76,9 @@ public class Message21 extends Messages {
 	    this.name = six_state.get_string(20);
 	    this.pos_acc       = (int)           six_state.get( 1  );
 
-	    this.pos = new Position();
-	    this.pos.setLongitude((long) six_state.get( 28 ));
-	    this.pos.setLatitude((long) six_state.get( 27 ));
+	    this.pos = new Position(10000.*60.);
+	    this.pos.setLongitude((long) six_state.getSignedInt(28));
+	    this.pos.setLatitude((long) six_state.getSignedInt(27));
 
 	    this.dim_bow       = (int)           six_state.get( 9  );
 	    this.dim_stern     = (int)           six_state.get( 9  );

@@ -70,11 +70,8 @@ public class Message22 extends Messages {
 	    this.txrx_mode      = (int)          six_state.get( 4  );
 	    this.power          = (int)          six_state.get( 1  );
 
-	    long NE_longitude   = (long) six_state.get( 18 );
-	    long NE_latitude    = (long) six_state.get( 17 );
-
-	    long SW_longitude   = (long) six_state.get( 18 );
-	    long SW_latitude    = (long) six_state.get( 17 );
+		String bitString1 = six_state.getBitstring(18+17);
+		String bitString2 = six_state.getBitstring(18+17);
 
 	    this.addressed      = (int)          six_state.get( 1  );
 	    this.bw_a           = (int)          six_state.get( 1  );
@@ -85,18 +82,15 @@ public class Message22 extends Messages {
 	    /* Is the position actually an address? */
 	    if (this.addressed == 1)
 	    {
-	        /* Convert the positions to addresses */
-	        this.addressed_1 = (NE_longitude << 12) + (NE_latitude >> 5);
-	        this.addressed_2 = (SW_longitude << 12) + (SW_latitude >> 5);
+	    	this.addressed_1 = Sixbit.getIntFromBitString(bitString1.substring(0,30), false);
+	    	this.addressed_2 = Sixbit.getIntFromBitString(bitString2.substring(0,30), false);
 	    } else {
-
-		    this.NE_pos = new Position();
-		    this.NE_pos.setLongitude( NE_longitude * 10 );
-		    this.NE_pos.setLatitude( NE_latitude * 10 );
-
-		    this.SW_pos = new Position();
-		    this.SW_pos.setLongitude( SW_longitude * 10 );
-		    this.SW_pos.setLatitude( SW_latitude * 10 );
+	    	this.NE_pos = new Position(10.*60.);
+	    	this.NE_pos.setLongitude(Sixbit.getIntFromBitString(bitString1.substring(0,18),true));
+	    	this.NE_pos.setLatitude(Sixbit.getIntFromBitString(bitString1.substring(18),true));
+	    	this.SW_pos = new Position(10.*60.);
+	    	this.SW_pos.setLongitude(Sixbit.getIntFromBitString(bitString2.substring(0,18),true));
+	    	this.SW_pos.setLatitude(Sixbit.getIntFromBitString(bitString2.substring(18),true));
 	    }
 	}
 }

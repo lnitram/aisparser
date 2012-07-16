@@ -15,7 +15,7 @@ package com.aisparser;
  */
 public class Message17 extends Messages {
     int             spare1;            // 2 bits      : Spare
-    Position        pos;               //             : Lat/Long 1/100000 minute
+    Position        pos;               //             : Lat/Long 1/10 minute
     int             spare2;            // 5 bits      : Spare
     int             msg_type;          // 6 bits      : Mesage Type from M.823
     int             station_id;        // 10 bits     : Station ID from M.823
@@ -58,9 +58,9 @@ public class Message17 extends Messages {
 
 	    this.spare1       = (int)            six_state.get( 2  );
 
-	    this.pos = new Position();
-	    this.pos.setLongitude((long) six_state.get( 18 ) * 10);
-	    this.pos.setLatitude((long) six_state.get( 17 ) * 10);
+	    this.pos = new Position(10.*60.);
+	    this.pos.setLongitude((long) six_state.getSignedInt(18));
+	    this.pos.setLatitude((long) six_state.getSignedInt(17));
 
 	    this.spare2       = (int)            six_state.get( 5  );
 	    this.msg_type     = (int)            six_state.get( 6  );

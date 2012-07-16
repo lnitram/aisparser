@@ -111,4 +111,26 @@ public class Sixbit {
 		}
 		return s;
 	}
+
+	public String getBitstring(int numBits) {
+		String current = bitstring.substring(0, numBits);
+		bitstring = bitstring.substring(numBits);
+		return current;
+	}
+
+	public static int getIntFromBitString(String bitstring, boolean signed) {
+		boolean minus = false;
+		String value = bitstring;
+
+		if (signed) {
+			minus = bitstring.charAt(0) == '1';
+			value = bitstring.substring(1);
+		}
+		if (minus) {
+			return (int) -(Math.pow(2, value.length()) - Math.abs(Integer
+					.parseInt(value, 2)));
+		} else {
+			return Integer.parseInt(value, 2);
+		}
+}
 }

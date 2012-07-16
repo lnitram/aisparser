@@ -41,28 +41,27 @@ public class Message23 extends Messages {
 	{
 		super();
 	}
-	
+
 	public Message23(Vdm vdm) throws SixbitsExhaustedException, AISMessageException {
 		this();
 		parse(vdm.sixbit());
 	}
-	
+
 	public void parse( Sixbit six_state )
 		throws SixbitsExhaustedException, AISMessageException
 	{
 		if (six_state.bit_length() == 168)
 			throw new AISMessageException("Message 23 wrong length");
-		
+
 		super.parse( 23, six_state );
-	
+
 	    this.spare1         = (int)           six_state.get( 2  );
 
+	    this.NE_pos = new Position(10.*60.);
+	    this.NE_pos.setLongitude( (int) six_state.getSignedInt(18));
+	    this.NE_pos.setLatitude( (int) six_state.getSignedInt(17));
 
-	    this.NE_pos = new Position();
-	    this.NE_pos.setLongitude( (int) six_state.get(18) * 10 );
-	    this.NE_pos.setLatitude( (int) six_state.get(17) * 10 );
-
-	    this.SW_pos = new Position();
+	    this.SW_pos = new Position(10.*60.);
 	    this.SW_pos.setLongitude( (int) six_state.get(18) * 10 );
 	    this.SW_pos.setLatitude( (int) six_state.get(17) * 10 );
 

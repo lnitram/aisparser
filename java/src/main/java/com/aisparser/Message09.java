@@ -68,9 +68,9 @@ public class Message09 extends Messages {
 		this.sog        = (int)   six_state.get( 10 );
 		this.pos_acc    = (int)   six_state.get( 1  );
 
-	    this.pos = new Position();
-	    this.pos.setLongitude((long) six_state.get( 28 ));
-	    this.pos.setLatitude((long) six_state.get( 27 ));
+	    this.pos = new Position(10000.*60.);
+	    this.pos.setLongitude((long) six_state.getSignedInt(28));
+	    this.pos.setLatitude((long) six_state.getSignedInt(27));
 
     	this.cog        = (int)   six_state.get( 12 );
     	this.utc_sec    = (int)   six_state.get( 6  );
