@@ -20,12 +20,14 @@ public class Sixbit {
 	}
 
 	public Integer getInt(int numBits) throws SixbitsExhaustedException {
+		if (numBits > bitstring.length()) throw new SixbitsExhaustedException();
 		String current = bitstring.substring(0,numBits);
 		bitstring = bitstring.substring(numBits);
 		return Integer.parseInt(current,2);
 	}
 
-	public int getSignedInt(int numBits) {
+	public int getSignedInt(int numBits) throws SixbitsExhaustedException {
+		if (numBits > bitstring.length()) throw new SixbitsExhaustedException();
 		String current = bitstring.substring(0, numBits);
 		bitstring = bitstring.substring(numBits);
 		boolean minus = current.charAt(0) == '1';
@@ -47,7 +49,8 @@ public class Sixbit {
 				return (char)value;
 		}
 
-	public String getString(int numBits) throws SixbitsExhaustedException{
+	public String getString(int numBits) throws SixbitsExhaustedException {
+		if (numBits > bitstring.length()) throw new SixbitsExhaustedException();
 		String res = "";
 		for (int i = 0; i < numBits/6; i++) {
 			int value = getInt(6);
@@ -99,7 +102,8 @@ public class Sixbit {
 		return s;
 	}
 
-	public String getBitstring(int numBits) {
+	public String getBitstring(int numBits) throws SixbitsExhaustedException {
+		if (numBits > bitstring.length()) throw new SixbitsExhaustedException();
 		String current = bitstring.substring(0, numBits);
 		bitstring = bitstring.substring(numBits);
 		return current;
