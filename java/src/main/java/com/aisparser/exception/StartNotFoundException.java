@@ -1,6 +1,5 @@
-package com.aisparser;
-
-class StartNotFoundException extends Exception
+package com.aisparser.exception;
+public class StartNotFoundException extends Exception
 {
 	public StartNotFoundException() {}
 	public StartNotFoundException( String str )

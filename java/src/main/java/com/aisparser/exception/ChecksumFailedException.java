@@ -1,4 +1,4 @@
-package com.aisparser;
+package com.aisparser.exception;
 
 public class ChecksumFailedException extends Exception
 {

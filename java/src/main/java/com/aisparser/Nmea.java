@@ -1,4 +1,6 @@
 package com.aisparser;
+
+import com.aisparser.exception.IllegalNMEACharacterException;
 /**
  * AIS Parser SDK
  * NMEA Parser Class
@@ -8,6 +10,7 @@ package com.aisparser;
  * @author Brian C. Lane
  *
  */
+import com.aisparser.exception.StartNotFoundException;
 
 /**
  * NMEA message class

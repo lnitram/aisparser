@@ -1,5 +1,7 @@
 package com.aisparser;
 
+import com.aisparser.exception.SixbitsExhaustedException;
+
 public class Sixbit {
 	private String bitstring;  //Contains the bits as String of 010101
 	private int numBits; //stores the original number of bits in the message

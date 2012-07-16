@@ -1,4 +1,6 @@
 package com.aisparser;
+
+import com.aisparser.exception.AISMessageException;
 /**
  * AIS Parser SDK
  * AIS Message 12 Class
@@ -7,6 +9,7 @@ package com.aisparser;
  * 
  * @author Brian C. Lane
  */
+import com.aisparser.exception.SixbitsExhaustedException;
 
 /**
  * AIS Message 12 class

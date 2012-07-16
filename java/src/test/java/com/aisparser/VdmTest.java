@@ -3,6 +3,12 @@ package com.aisparser;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.aisparser.exception.ChecksumFailedException;
+import com.aisparser.exception.OutOfSequenceException;
+import com.aisparser.exception.StartNotFoundException;
+import com.aisparser.exception.VDMSentenceException;
+
 import static org.junit.Assert.*;
 
 

@@ -1,5 +1,8 @@
 package com.aisparser;
 
+import com.aisparser.exception.AISMessageException;
+import com.aisparser.exception.SixbitsExhaustedException;
+
 /**
  * AIS Parser SDK
  * AIS itdma Class

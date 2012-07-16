@@ -3,6 +3,9 @@ package com.aisparser;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.aisparser.exception.SixbitsExhaustedException;
+
 import static org.junit.Assert.*;
 
 public class SixbitTest {

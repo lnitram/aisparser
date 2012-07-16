@@ -1,4 +1,6 @@
 package com.aisparser;
+
+import com.aisparser.exception.ChecksumFailedException;
 /**
  * AIS Parser SDK
  * VDM Parser Class
@@ -7,6 +9,10 @@ package com.aisparser;
  * 
  * @author Brian C. Lane
  */
+import com.aisparser.exception.OutOfSequenceException;
+import com.aisparser.exception.SixbitsExhaustedException;
+import com.aisparser.exception.StartNotFoundException;
+import com.aisparser.exception.VDMSentenceException;
 
 /**
  * VDM Class

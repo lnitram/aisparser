@@ -1,6 +1,5 @@
-package com.aisparser;
-
-class AISMessageException extends Exception
+package com.aisparser.exception;
+public class AISMessageException extends Exception
 {
 	public AISMessageException() {}
 	public AISMessageException( String str )
