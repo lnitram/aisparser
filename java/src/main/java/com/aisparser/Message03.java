@@ -16,7 +16,7 @@ package com.aisparser;
  */
 public class Message03 extends Messages {
     int            nav_status;        // 4 bits  : Navigational Status
-    int			   rot;               // 8 bits  : Rate of Turn   
+    int            rot;               // 8 bits  : Rate of Turn   
     int            sog;               // 10 bits : Speed Over Ground
     int            pos_acc;           // 1 bit   : Position Accuracy
     Position       pos;               //         : Lat/Long 1/10000 minute
@@ -69,7 +69,7 @@ public class Message03 extends Messages {
 		
 	    /* Parse the Message 3 */
 	    this.nav_status     = (int)  six_state.get( 4 );
-	    this.rot            = (int)  six_state.get( 8 );
+	    this.rot            = (int)  six_state.getSignedInt(8);
 	    this.sog            = (int)  six_state.get( 10 );
 	    this.pos_acc        = (int)  six_state.get( 1 );
 
