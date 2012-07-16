@@ -14,24 +14,24 @@ package com.aisparser;
  * 
  */
 public class Message19 extends Messages {
-    int             regional1;         // 8 bits   : Regional Bits
-    int             sog;               // 10 bits  : Speed Over Ground
-    int             pos_acc;           // 1 bit    : Position Accuracy
-    Position        pos;               //          : Lat/Long 1/100000 minute
-    int             cog;               // 12 bits  : Course Over Ground
-    int             true_heading;      // 9 bits   : True Heading
-    int             utc_sec;           // 6 bits   : UTC Seconds
-    int             regional2;         // 4 bits   : Regional Bits
-    String          name;              // 120 bits : Ship Name in ASCII
-    int             ship_type;         // 8 bits   : Type of Ship and Cargo
-    int             dim_bow;           // 9 bits   : GPS Ant. Distance from Bow
-    int             dim_stern;         // 9 bits   : GPS Ant. Distance from Stern   
-    int             dim_port;          // 6 bits   : GPS Ant. Distance from Port
-    int             dim_starboard;     // 6 bits   : GPS Ant. Distance from Starboard
-    int             pos_type;          // 4 bits   : Type of Position Fixing Device
-    int             raim;              // 1 bit    : RAIM Flag
-    int             dte;               // 1 bit    : DTE Flag
-    int             spare;             // 5 bits   : Spare
+    private int             regional1;         // 8 bits   : Regional Bits
+    private int             sog;               // 10 bits  : Speed Over Ground
+    private int             pos_acc;           // 1 bit    : Position Accuracy
+    private Position        pos;               //          : Lat/Long 1/100000 minute
+    private int             cog;               // 12 bits  : Course Over Ground
+    private int             true_heading;      // 9 bits   : True Heading
+    private int             utc_sec;           // 6 bits   : UTC Seconds
+    private int             regional2;         // 4 bits   : Regional Bits
+    private String          name;              // 120 bits : Ship Name in ASCII
+    private int             ship_type;         // 8 bits   : Type of Ship and Cargo
+    private int             dim_bow;           // 9 bits   : GPS Ant. Distance from Bow
+    private int             dim_stern;         // 9 bits   : GPS Ant. Distance from Stern   
+    private int             dim_port;          // 6 bits   : GPS Ant. Distance from Port
+    private int             dim_starboard;     // 6 bits   : GPS Ant. Distance from Starboard
+    private int             pos_type;          // 4 bits   : Type of Position Fixing Device
+    private int             raim;              // 1 bit    : RAIM Flag
+    private int             dte;               // 1 bit    : DTE Flag
+    private int             spare;             // 5 bits   : Spare
     
     public int regional1() { return this.regional1; }
     public int sog() { return this.sog; }
@@ -57,41 +57,41 @@ public class Message19 extends Messages {
 	{
 		super();
 	}
-	
+
 	public Message19(Vdm vdm) throws SixbitsExhaustedException, AISMessageException {
 		this();
 		parse(vdm.sixbit());
 	}
-	
+
 	public void parse( Sixbit six_state )
 		throws SixbitsExhaustedException, AISMessageException
 	{
 		if ( six_state.bit_length() != 312 )
 			throw new AISMessageException("Message 19 wrong length");
-		
+
 		super.parse( 19, six_state );
-		
-	    this.regional1      = (int) six_state.get( 8  );
-	    this.sog            = (int)            six_state.get( 10 );
-	    this.pos_acc        = (int)            six_state.get( 1  );
+
+	    this.regional1      = (int)            six_state.getInt(8);
+	    this.sog            = (int)            six_state.getInt(10);
+	    this.pos_acc        = (int)            six_state.getInt(1);
 
 	    this.pos = new Position(10000.*60.);
 	    this.pos.setLongitude((long) six_state.getSignedInt(28));
 	    this.pos.setLatitude((long) six_state.getSignedInt(27));
 
-	    this.cog            = (int)            six_state.get( 12 );
-	    this.true_heading   = (int)            six_state.get( 9  );
-	    this.utc_sec        = (int)            six_state.get( 6  );
-	    this.regional2      = (int)            six_state.get( 4  );
+	    this.cog            = (int)            six_state.getInt(12);
+	    this.true_heading   = (int)            six_state.getInt(9);
+	    this.utc_sec        = (int)            six_state.getInt(6);
+	    this.regional2      = (int)            six_state.getInt(4);
 	    this.name           =                  six_state.getString(120);
-	    this.ship_type      = (int)            six_state.get( 8  );
-	    this.dim_bow        = (int)            six_state.get( 9  );
-	    this.dim_stern      = (int)            six_state.get( 9  );
-	    this.dim_port       = (int)            six_state.get( 6  );
-	    this.dim_starboard  = (int)            six_state.get( 6  );
-	    this.pos_type       = (int)            six_state.get( 4  );
-	    this.raim           = (int)            six_state.get( 1  );
-	    this.dte            = (int)            six_state.get( 1  );
-	    this.spare          = (int)            six_state.get( 5  );   
+	    this.ship_type      = (int)            six_state.getInt(8);
+	    this.dim_bow        = (int)            six_state.getInt(9);
+	    this.dim_stern      = (int)            six_state.getInt(9);
+	    this.dim_port       = (int)            six_state.getInt(6);
+	    this.dim_starboard  = (int)            six_state.getInt(6);
+	    this.pos_type       = (int)            six_state.getInt(4);
+	    this.raim           = (int)            six_state.getInt(1);
+	    this.dte            = (int)            six_state.getInt(1);
+	    this.spare          = (int)            six_state.getInt(5);
 	}
 }

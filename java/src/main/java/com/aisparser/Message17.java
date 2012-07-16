@@ -14,16 +14,16 @@ package com.aisparser;
  * 
  */
 public class Message17 extends Messages {
-    int             spare1;            // 2 bits      : Spare
-    Position        pos;               //             : Lat/Long 1/10 minute
-    int             spare2;            // 5 bits      : Spare
-    int             msg_type;          // 6 bits      : Mesage Type from M.823
-    int             station_id;        // 10 bits     : Station ID from M.823
-    int             z_count;           // 13 bits     : Z Count
-    int             seq_num;           // 3 bits      : Sequence Number
-    int             num_words;         // 5 bits      : Number of Data Words
-    int             health;            // 3 bits      : Reference Station Health from M.823
-    Sixbit          data;              // 0-696 bits  : Data payload
+    private int             spare1;            // 2 bits      : Spare
+    private Position        pos;               //             : Lat/Long 1/10 minute
+    private int             spare2;            // 5 bits      : Spare
+    private int             msg_type;          // 6 bits      : Mesage Type from M.823
+    private int             station_id;        // 10 bits     : Station ID from M.823
+    private int             z_count;           // 13 bits     : Z Count
+    private int             seq_num;           // 3 bits      : Sequence Number
+    private int             num_words;         // 5 bits      : Number of Data Words
+    private int             health;            // 3 bits      : Reference Station Health from M.823
+    private Sixbit          data;              // 0-696 bits  : Data payload
     
     public int spare1() { return this.spare1; }
     public long longitude() { return this.pos.longitude(); }
@@ -41,34 +41,34 @@ public class Message17 extends Messages {
 	{
 		super();
 	}
-	
+
 	public Message17(Vdm vdm) throws SixbitsExhaustedException, AISMessageException {
 		this();
 		parse(vdm.sixbit());
 	}
-	
+
 	public void parse( Sixbit six_state )
 		throws SixbitsExhaustedException, AISMessageException
 	{
 		int length = six_state.bit_length();
 		if ((length < 80) || (length > 816))
 			throw new AISMessageException("Message 17 wrong length");
-		
+
 		super.parse( 17, six_state );
 
-	    this.spare1       = (int)            six_state.get( 2  );
+	    this.spare1       = (int)            six_state.getInt(2);
 
 	    this.pos = new Position(10.*60.);
 	    this.pos.setLongitude((long) six_state.getSignedInt(18));
 	    this.pos.setLatitude((long) six_state.getSignedInt(17));
 
-	    this.spare2       = (int)            six_state.get( 5  );
-	    this.msg_type     = (int)            six_state.get( 6  );
-	    this.station_id   = (int)            six_state.get( 10 );
-	    this.z_count      = (int)            six_state.get( 13 );
-	    this.seq_num      = (int)            six_state.get( 3  );
-	    this.num_words    = (int)            six_state.get( 5  );
-	    this.health       = (int)            six_state.get( 3  );
+	    this.spare2       = (int)            six_state.getInt(5);
+	    this.msg_type     = (int)            six_state.getInt(6);
+	    this.station_id   = (int)            six_state.getInt(10);
+	    this.z_count      = (int)            six_state.getInt(13);
+	    this.seq_num      = (int)            six_state.getInt(3);
+	    this.num_words    = (int)            six_state.getInt(5);
+	    this.health       = (int)            six_state.getInt(3);
 
 	    this.data = six_state;
 	}

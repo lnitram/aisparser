@@ -8,4 +8,3 @@ public class ChecksumFailedException extends Exception
 		super(str);
 	}
 }
-

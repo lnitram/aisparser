@@ -15,20 +15,20 @@ package com.aisparser;
  * 
  */
 public class Message09 extends Messages {
-    int            altitude;          // 12 bits  : Altitude
-    int            sog;               // 10 bits  : Speed Over Ground
-    int            pos_acc;           // 1 bit    : Position Accuracy
-    Position       pos;               //          : Lat/Long 1/100000 minute
-    int            cog;               // 12 bits  : Course Over Ground
-    int            utc_sec;           // 6 bits   : UTC Seconds
-    int            regional;          // 8 bits   : Regional bits
-    int            dte;               // 1 bit    : DTE flag
-    int            spare;             // 3 bits   : Spare
-    int            assigned;          // 1 bit    : Assigned mode flag
-    int            raim;              // 1 bit    : RAIM flag
-    int            comm_state;        // 1 bit    : Comm State Flag
-    Sotdma         sotdma_state = null;
-    Itdma          itdma_state = null;
+    private int            altitude;          // 12 bits  : Altitude
+    private int            sog;               // 10 bits  : Speed Over Ground
+    private int            pos_acc;           // 1 bit    : Position Accuracy
+    private Position       pos;               //          : Lat/Long 1/100000 minute
+    private int            cog;               // 12 bits  : Course Over Ground
+    private int            utc_sec;           // 6 bits   : UTC Seconds
+    private int            regional;          // 8 bits   : Regional bits
+    private int            dte;               // 1 bit    : DTE flag
+    private int            spare;             // 3 bits   : Spare
+    private int            assigned;          // 1 bit    : Assigned mode flag
+    private int            raim;              // 1 bit    : RAIM flag
+    private int            comm_state;        // 1 bit    : Comm State Flag
+    private Sotdma         sotdma_state = null;
+    private Itdma          itdma_state = null;
     
     public int altitiude() { return this.altitude; }
     public int sog() { return this.sog; }
@@ -50,36 +50,36 @@ public class Message09 extends Messages {
 	{
 		super();
 	}
-	
+
 	public Message09(Vdm vdm) throws SixbitsExhaustedException, AISMessageException {
 		this();
 		parse(vdm.sixbit());
 	}
-	
+
 	public void parse( Sixbit six_state )
 		throws SixbitsExhaustedException, AISMessageException
 	{
 		if (six_state.bit_length() != 168)
 			throw new AISMessageException("Message 9 wrong length");
-		
+
 		super.parse( 9, six_state );
-        
-		this.altitude   = (int)   six_state.get( 12 );
-		this.sog        = (int)   six_state.get( 10 );
-		this.pos_acc    = (int)   six_state.get( 1  );
+
+		this.altitude   = (int)   six_state.getInt(12);
+		this.sog        = (int)   six_state.getInt(10);
+		this.pos_acc    = (int)   six_state.getInt(1);
 
 	    this.pos = new Position(10000.*60.);
 	    this.pos.setLongitude((long) six_state.getSignedInt(28));
 	    this.pos.setLatitude((long) six_state.getSignedInt(27));
 
-    	this.cog        = (int)   six_state.get( 12 );
-    	this.utc_sec    = (int)   six_state.get( 6  );
-    	this.regional   = (char)  six_state.get( 8  );
-    	this.dte        = (char)  six_state.get( 1  );
-    	this.spare      = (char)  six_state.get( 3  );
-    	this.assigned   = (char)  six_state.get( 1  );
-    	this.raim       = (char)  six_state.get( 1  );
-    	this.comm_state = (char)  six_state.get( 1  );
+    	this.cog        = (int)   six_state.getInt(12);
+    	this.utc_sec    = (int)   six_state.getInt(6);
+    	this.regional   = (int)  six_state.getInt(8);
+    	this.dte        = (int)  six_state.getInt(1);
+    	this.spare      = (int)  six_state.getInt(3);
+    	this.assigned   = (int)  six_state.getInt(1);
+    	this.raim       = (int)  six_state.getInt(1);
+    	this.comm_state = (int)  six_state.getInt(1);
     	
     	if (this.comm_state == 0)
     	{

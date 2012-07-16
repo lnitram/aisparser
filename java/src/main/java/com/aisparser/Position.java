@@ -12,8 +12,8 @@ package com.aisparser;
 /**
  * AIS Position class
  * 
- * Convert raw unsigned AIS position to signed 1/10000 degree position
- * and provide helper methods for other formats
+ * Stores raw AIS position
+ * and provide helper methods for other converting to degrees
  * 
  */
 public class Position {

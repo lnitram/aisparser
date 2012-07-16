@@ -18,7 +18,7 @@ package com.aisparser;
 public class Nmea {
 	private String msg;
 	private int	checksum;
-	
+
 	/*
 	 * A totally blank constructor
 	 */
@@ -26,7 +26,7 @@ public class Nmea {
 	{
 		super();
 	}
-	
+
 	/*
 	 * Initialize it with a NMEA message string
 	 */
@@ -35,7 +35,6 @@ public class Nmea {
 		this.msg = msg;
 	}
 
-	
 	/**
 	 * Find the start of a NMEA sentence '!' or '$' character
      *
@@ -51,7 +50,7 @@ public class Nmea {
 	{
 		char[] msgArray = msg.toCharArray();
 		int i = 0;
-		
+
 		for (char x : msgArray)
 		{
 			if ((x == '!') || (x == '$'))
@@ -60,8 +59,7 @@ public class Nmea {
 		}
 		throw new StartNotFoundException("NMEA Start Not Found");
 	}
-	
-	
+
 	/**
 	 * Calculate the checksum of a NMEA 0183 sentence
      *   
@@ -75,26 +73,25 @@ public class Nmea {
 	throws StartNotFoundException, IllegalNMEACharacterException
 	{
 	    int ptr;
-	  
+
 	    /* Find start of sentence, after a '!' or '$' */
     	ptr = find_start() + 1;
-	    
+
 	    char[] msgArray = msg.substring(ptr).toCharArray();
-	    
+
 	    this.checksum = 0;
 	    for ( char c : msgArray )
 	    {
 	    	if ( (c == '!') || (c == '$'))
 	    		throw new IllegalNMEACharacterException("Start Character Found before Checksum");
-	    	
+
 	    	if (c == '*')
 	    		break;
-	    	
+
 		    this.checksum ^= c;
 	    }
 	}
-	
-	
+
 	/**
 	 * Check and return the checksum of a NMEA 0183 sentence
 	 *
@@ -110,7 +107,7 @@ public class Nmea {
 	{
 		String msgChecksum;
 		int ptr;
-		
+
 		try {
 			calculateChecksum();
 		} catch (StartNotFoundException e) {
@@ -118,17 +115,17 @@ public class Nmea {
 		} catch (IllegalNMEACharacterException e) {
 			return 2;
 		}
-		
+
 		ptr = msg.indexOf('*');
 		if (ptr < 0)
 			return 2;
-		
+
 		try {
 			msgChecksum = msg.substring(ptr+1, ptr+3);
 		} catch (IndexOutOfBoundsException e) {
 			return 2;
 		}
-		
+
 		if ( Integer.parseInt(msgChecksum,16) != this.checksum )
 			return 1;
 		return 0;

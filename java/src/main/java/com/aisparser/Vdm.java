@@ -22,7 +22,6 @@ public class Vdm {
     int    num;                 //!< Number of the last part stored
     char   channel;             //!< AIS Channel character
     Sixbit six_state;           //!< sixbit parser state
-	
     
     /*
      * Constructor, initialize the state
@@ -49,7 +48,7 @@ public class Vdm {
     {
     	return this.msgid;
     }
-	
+
 	/**
 	 *  Assemble AIVDM/VDO sentences
 	 *
@@ -77,7 +76,7 @@ public class Vdm {
      *   - 4 Error with nmea_next_field
      *   - 5 Out of sequence packet
      *
-     */	
+     */
 	public int add( String str )
 		throws ChecksumFailedException, StartNotFoundException, VDMSentenceException
 	{
@@ -87,9 +86,9 @@ public class Vdm {
 		int	total;
 		int num;
 		int sequence;
-		
+
 		nmea_message.init(str);
-		
+
 		if (nmea_message.checkChecksum() != 0)
 			throw new ChecksumFailedException();
 		ptr = nmea_message.find_start();
@@ -105,7 +104,7 @@ public class Vdm {
 		fields = str.split(",|\\*");
 		if (fields.length != 8)
 			throw new VDMSentenceException("Does not have 8 fields");
-		
+
 		// Get the message info for multipart messages
 		try {
 			total = Integer.parseInt(fields[1]);
@@ -140,9 +139,9 @@ public class Vdm {
 	        this.six_state.init("");
 		}
 		this.channel = fields[4].charAt(0);
-		
+
 		this.six_state.add(fields[5]);
-		
+
 		if ((total==0) || (this.total == num))
 		{
 		    this.total    = 0;
@@ -151,18 +150,18 @@ public class Vdm {
 
 		    // Get the message id
 		    try {
-		    	this.msgid = (int) six_state.get(6);
+		    	this.msgid = (int) six_state.getInt(6);
 		    } catch (SixbitsExhaustedException e) {
 		    	throw new VDMSentenceException("Not enough bits for msgid");
 		    }
-		    
+
 		    // Adjust bit count
 		   this.six_state.padBits( Integer.parseInt(fields[6]) );
-		    
+
 		    /* Found a complete packet */
 		    return 0;
 		}
-		
+
 		// No complete message yet
 		return 1;
 	}

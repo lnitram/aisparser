@@ -14,20 +14,20 @@ package com.aisparser;
  * 
  */
 public class Message22 extends Messages {
-    int             spare1;            // 2 bits   : Spare
-    int             channel_a;         // 12 bits  : M.1084 Channel A Frequency
-    int             channel_b;         // 12 bits  : M.1084 Channel B Frequency
-    int             txrx_mode;         // 4 bits   : TX/RX Mode
-    int             power;             // 1 bit    : Power Level
-    Position        NE_pos;            //          : NE Corner Lat/Long in 1/1000 minutes
-    long            addressed_1;       // 30 bits  : Destination MMSI 1
-    Position        SW_pos;            //          : SW Corner Lat/Long in 1/1000 minutes
-    long            addressed_2;       // 30 bits  : Destination MMSI 2
-    int             addressed;         // 1 bit    : Addressed flag
-    int             bw_a;              // 1 bit    : Channel A Bandwidth
-    int             bw_b;              // 1 bit    : Channel B Bandwidth
-    int             tz_size;           // 3 bits   : Transitional Zone size
-    long            spare2;            // 23 bits  : Spare
+    private int             spare1;            // 2 bits   : Spare
+    private int             channel_a;         // 12 bits  : M.1084 Channel A Frequency
+    private int             channel_b;         // 12 bits  : M.1084 Channel B Frequency
+    private int             txrx_mode;         // 4 bits   : TX/RX Mode
+    private int             power;             // 1 bit    : Power Level
+    private Position        NE_pos;            //          : NE Corner Lat/Long in 1/1000 minutes
+    private long            addressed_1;       // 30 bits  : Destination MMSI 1
+    private Position        SW_pos;            //          : SW Corner Lat/Long in 1/1000 minutes
+    private long            addressed_2;       // 30 bits  : Destination MMSI 2
+    private int             addressed;         // 1 bit    : Addressed flag
+    private int             bw_a;              // 1 bit    : Channel A Bandwidth
+    private int             bw_b;              // 1 bit    : Channel B Bandwidth
+    private int             tz_size;           // 3 bits   : Transitional Zone size
+    private long            spare2;            // 23 bits  : Spare
     
     public int spare1() { return this.spare1; }
     public int channel_a() { return this.channel_a; }
@@ -50,34 +50,34 @@ public class Message22 extends Messages {
 	{
 		super();
 	}
-	
+
 	public Message22(Vdm vdm) throws SixbitsExhaustedException, AISMessageException {
 		this();
 		parse(vdm.sixbit());
 	}
-	
+
 	public void parse( Sixbit six_state )
 		throws SixbitsExhaustedException, AISMessageException
 	{
 		if (six_state.bit_length() != 168)
 			throw new AISMessageException("Message 22 wrong length");
-		
+
 		super.parse( 22, six_state );
 
-	    this.spare1         = (int)          six_state.get( 2  );
-	    this.channel_a      = (int)           six_state.get( 12 );
-	    this.channel_b      = (int)           six_state.get( 12 );
-	    this.txrx_mode      = (int)          six_state.get( 4  );
-	    this.power          = (int)          six_state.get( 1  );
+	    this.spare1         = (int)          six_state.getInt(2);
+	    this.channel_a      = (int)          six_state.getInt(12);
+	    this.channel_b      = (int)          six_state.getInt(12);
+	    this.txrx_mode      = (int)          six_state.getInt(4);
+	    this.power          = (int)          six_state.getInt(1);
 
 		String bitString1 = six_state.getBitstring(18+17);
 		String bitString2 = six_state.getBitstring(18+17);
 
-	    this.addressed      = (int)          six_state.get( 1  );
-	    this.bw_a           = (int)          six_state.get( 1  );
-	    this.bw_b           = (int)          six_state.get( 1  );
-	    this.tz_size        = (int)          six_state.get( 3  );
-	    this.spare2         = (int)          six_state.get(23);
+	    this.addressed      = (int)          six_state.getInt(1);
+	    this.bw_a           = (int)          six_state.getInt(1);
+	    this.bw_b           = (int)          six_state.getInt(1);
+	    this.tz_size        = (int)          six_state.getInt(3);
+	    this.spare2         = (int)          six_state.getInt(23);
 
 	    /* Is the position actually an address? */
 	    if (this.addressed == 1)

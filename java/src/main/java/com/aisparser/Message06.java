@@ -15,12 +15,12 @@ package com.aisparser;
  * 
  */
 public class Message06 extends Messages {
-    int            sequence;          // 2 bits   : Sequence number
-    long           destination;       // 30 bits  : Destination MMSI
-    int            retransmit;        // 1 bit    : Retransmit
-    int            spare;             // 1 bit    : Spare
-    int            app_id;            // 16 bits  : Application ID
-    Sixbit         data;              // 960 bits : Data payload
+    private int            sequence;          // 2 bits   : Sequence number
+    private long           destination;       // 30 bits  : Destination MMSI
+    private int            retransmit;        // 1 bit    : Retransmit
+    private int            spare;             // 1 bit    : Spare
+    private int            app_id;            // 16 bits  : Application ID
+    private Sixbit         data;              // 960 bits : Data payload
 
     public int sequence() { return this.sequence; }
     public long destination() { return this.destination; }
@@ -33,25 +33,25 @@ public class Message06 extends Messages {
 	{
 		super();
 	}
-	
+
 	public Message06(Vdm vdm) throws SixbitsExhaustedException, AISMessageException {
 		this();
 		parse(vdm.sixbit());
 	}
-	
+
 	public void parse( Sixbit six_state )
 		throws SixbitsExhaustedException, AISMessageException
 	{
 		if ((six_state.bit_length() < 88) || (six_state.bit_length() > 1008))
 			throw new AISMessageException("Message 6 wrong length");
-		
+
 		super.parse( 6, six_state );
-		
-	    this.sequence     = (int)   six_state.get( 2 );
-	    this.destination  = (long)  six_state.get( 30 );
-	    this.retransmit   = (int)   six_state.get( 1 );
-	    this.spare        = (int)   six_state.get( 1 );
-	    this.app_id       = (int)   six_state.get( 16 );
+
+	    this.sequence     = (int)   six_state.getInt(2);
+	    this.destination  = (long)  six_state.getInt(30);
+	    this.retransmit   = (int)   six_state.getInt(1);
+	    this.spare        = (int)   six_state.getInt(1);
+	    this.app_id       = (int)   six_state.getInt(16);
 
 	    /* Store the remaining payload of the packet for further processing */
 		this.data = six_state;

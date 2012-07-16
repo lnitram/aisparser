@@ -15,25 +15,25 @@ package com.aisparser;
  * 
  */
 public class Message18 extends Messages {
-    int             regional1;         // 8 bits   : Regional Bits
-    int             sog;               // 10 bits  : Speed Over Ground
-    int             pos_acc;           // 1 bit    : Position Accuracy
-    Position        pos;               //          : Lat/Long 1/100000 minute
-    int             cog;               // 12 bits  : Course Over Ground
-    int             true_heading;      // 9 bits   : True Heading
-    int             utc_sec;           // 6 bits   : UTC Seconds
-    int             regional2;         // 2 bits   : Regional Bits
-    int             unit_flag;         // 1 bit    : Class B CS Flag
-    int             display_flag;      // 1 bit    : Integrated msg14 Display Flag
-    int             dsc_flag;          // 1 bit    : DSC Capability flag
-    int             band_flag;         // 1 bit    : Marine Band Operation Flag
-    int             msg22_flag;        // 1 bit    : Msg22 Frequency Management Flag
-    int             mode_flag;         // 1 bit    : Autonomous Mode Flag
-    int             raim;              // 1 bit    : RAIM Flag
-    int             comm_state;        // 1 bit    : Comm State Flag
-    Sotdma sotdma_state = null;
-    Itdma itdma_state = null;
-    
+    private int             regional1;         // 8 bits   : Regional Bits
+    private int             sog;               // 10 bits  : Speed Over Ground
+    private int             pos_acc;           // 1 bit    : Position Accuracy
+    private Position        pos;               //          : Lat/Long 1/100000 minute
+    private int             cog;               // 12 bits  : Course Over Ground
+    private int             true_heading;      // 9 bits   : True Heading
+    private int             utc_sec;           // 6 bits   : UTC Seconds
+    private int             regional2;         // 2 bits   : Regional Bits
+    private int             unit_flag;         // 1 bit    : Class B CS Flag
+    private int             display_flag;      // 1 bit    : Integrated msg14 Display Flag
+    private int             dsc_flag;          // 1 bit    : DSC Capability flag
+    private int             band_flag;         // 1 bit    : Marine Band Operation Flag
+    private int             msg22_flag;        // 1 bit    : Msg22 Frequency Management Flag
+    private int             mode_flag;         // 1 bit    : Autonomous Mode Flag
+    private int             raim;              // 1 bit    : RAIM Flag
+    private int             comm_state;        // 1 bit    : Comm State Flag
+    private Sotdma sotdma_state = null;
+    private Itdma itdma_state = null;
+
     public int regional1() { return this.regional1; }
     public int sog() { return this.sog; }
     public int pos_acc() { return this.pos_acc; }
@@ -58,40 +58,40 @@ public class Message18 extends Messages {
 	{
 		super();
 	}
-	
+
 	public Message18(Vdm vdm) throws SixbitsExhaustedException, AISMessageException {
 		this();
 		parse(vdm.sixbit());
 	}
-	
+
 	public void parse( Sixbit six_state )
 		throws SixbitsExhaustedException, AISMessageException
 	{
 		if ( six_state.bit_length() != 168 )
 			throw new AISMessageException("Message 18 wrong length");
-		
+
 		super.parse( 18, six_state );
 
-	    this.regional1      = (int) six_state.get( 8  );
-	    this.sog            = (int)           six_state.get( 10 );
-	    this.pos_acc        = (int)           six_state.get( 1  );
+	    this.regional1      = (int)           six_state.getInt(8);
+	    this.sog            = (int)           six_state.getInt(10);
+	    this.pos_acc        = (int)           six_state.getInt(1);
 
 	    this.pos = new Position(10000.*60.);
 	    this.pos.setLongitude((long) six_state.getSignedInt(28));
 	    this.pos.setLatitude((long) six_state.getSignedInt(27));
 
-	    this.cog            = (int)           six_state.get( 12 );
-	    this.true_heading   = (int)           six_state.get( 9  );
-	    this.utc_sec        = (int)           six_state.get( 6  );
-	    this.regional2      = (int)           six_state.get( 2  );
-	    this.unit_flag      = (int)           six_state.get( 1  );
-	    this.display_flag   = (int)           six_state.get( 1  );
-	    this.dsc_flag       = (int)           six_state.get( 1  );
-	    this.band_flag      = (int)           six_state.get( 1  );
-	    this.msg22_flag     = (int)           six_state.get( 1  );
-	    this.mode_flag      = (int)           six_state.get( 1  );
-	    this.raim           = (int)           six_state.get( 1  );
-	    this.comm_state     = (int)           six_state.get( 1  );
+	    this.cog            = (int)           six_state.getInt(12);
+	    this.true_heading   = (int)           six_state.getInt(9);
+	    this.utc_sec        = (int)           six_state.getInt(6);
+	    this.regional2      = (int)           six_state.getInt(2);
+	    this.unit_flag      = (int)           six_state.getInt(1);
+	    this.display_flag   = (int)           six_state.getInt(1);
+	    this.dsc_flag       = (int)           six_state.getInt(1);
+	    this.band_flag      = (int)           six_state.getInt(1);
+	    this.msg22_flag     = (int)           six_state.getInt(1);
+	    this.mode_flag      = (int)           six_state.getInt(1);
+	    this.raim           = (int)           six_state.getInt(1);
+	    this.comm_state     = (int)           six_state.getInt(1);
 
     	if (this.comm_state == 0)
     	{

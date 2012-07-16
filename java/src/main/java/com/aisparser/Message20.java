@@ -14,25 +14,25 @@ package com.aisparser;
  * 
  */
 public class Message20 extends Messages {
-    int             spare1;            // 2 bits   : Spare
-    int             offset1;           // 12 bits  : Slot Offset 1
-    int             slots1;            // 4 bits   : Number of Slots 1
-    int             timeout1;          // 3 bits   : Timeout in Minutes 2
-    int             increment1;        // 11 bits  : Slot Increment 1
-    int             offset2;           // 12 bits  : Slot Offset 2
-    int             slots2;            // 4 bits   : Number of Slots 2
-    int             timeout2;          // 3 bits   : Timeout in Minutes 2
-    int             increment2;        // 11 bits  : Slot Increment 2
-    int             offset3;           // 12 bits  : Slot Offset 3
-    int             slots3;            // 4 bits   : Number of Slots 3
-    int             timeout3;          // 3 bits   : Timeout in Minutes 3
-    int             increment3;        // 11 bits  : Slot Increment 3
-    int             offset4;           // 12 bits  : Slot Offset 4
-    int             slots4;            // 4 bits   : Number of Slots 4
-    int             timeout4;          // 3 bits   : Timeout in Minutes 4
-    int             increment4;        // 11 bits  : Slot Increment 4
-    int             spare2;            // 0-6 bits : Spare
-    int             num_cmds;          // Number of commands received
+    private int             spare1;            // 2 bits   : Spare
+    private int             offset1;           // 12 bits  : Slot Offset 1
+    private int             slots1;            // 4 bits   : Number of Slots 1
+    private int             timeout1;          // 3 bits   : Timeout in Minutes 2
+    private int             increment1;        // 11 bits  : Slot Increment 1
+    private int             offset2;           // 12 bits  : Slot Offset 2
+    private int             slots2;            // 4 bits   : Number of Slots 2
+    private int             timeout2;          // 3 bits   : Timeout in Minutes 2
+    private int             increment2;        // 11 bits  : Slot Increment 2
+    private int             offset3;           // 12 bits  : Slot Offset 3
+    private int             slots3;            // 4 bits   : Number of Slots 3
+    private int             timeout3;          // 3 bits   : Timeout in Minutes 3
+    private int             increment3;        // 11 bits  : Slot Increment 3
+    private int             offset4;           // 12 bits  : Slot Offset 4
+    private int             slots4;            // 4 bits   : Number of Slots 4
+    private int             timeout4;          // 3 bits   : Timeout in Minutes 4
+    private int             increment4;        // 11 bits  : Slot Increment 4
+    private int             spare2;            // 0-6 bits : Spare
+    private int             num_cmds;          // Number of commands received
 
     public int spare1() { return this.spare1; }
     public int offset1() { return this.offset1; }
@@ -73,37 +73,37 @@ public class Message20 extends Messages {
 		
 		super.parse( 20, six_state );
 
-		this.spare1         = (int) six_state.get( 2  );
-	    this.offset1        = (int) six_state.get( 12 );
-	    this.slots1         = (int) six_state.get( 4  );
-	    this.timeout1       = (int) six_state.get( 3  );
-	    this.increment1     = (int) six_state.get( 11 );
+		this.spare1         = (int) six_state.getInt(2);
+	    this.offset1        = (int) six_state.getInt(12);
+	    this.slots1         = (int) six_state.getInt(4);
+	    this.timeout1       = (int) six_state.getInt(3);
+	    this.increment1     = (int) six_state.getInt(11);
 	    this.num_cmds       = 1;
 
 	    if( length > 72 )
 	    {
-	        this.offset2    = (int) six_state.get( 12 );
-	        this.slots2     = (int) six_state.get( 4  );
-	        this.timeout2   = (int) six_state.get( 3  );
-	        this.increment2 = (int) six_state.get( 11 );
+	        this.offset2    = (int) six_state.getInt(12);
+	        this.slots2     = (int) six_state.getInt(4);
+	        this.timeout2   = (int) six_state.getInt(3);
+	        this.increment2 = (int) six_state.getInt(11);
 	        this.num_cmds   = 2;
 	    }
 
 	    if( length > 104 )
 	    {
-	        this.offset3    = (int)  six_state.get( 12 );
-	        this.slots3     = (int) six_state.get( 4  );
-	        this.timeout3   = (int) six_state.get( 3  );
-	        this.increment3 = (int)  six_state.get( 11 );
+	        this.offset3    = (int) six_state.getInt(12);
+	        this.slots3     = (int) six_state.getInt(4);
+	        this.timeout3   = (int) six_state.getInt(3);
+	        this.increment3 = (int) six_state.getInt(11);
 	        this.num_cmds   = 3;
 	    }
 
 	    if( length > 136 )
 	    {
-	        this.offset4    = (int)  six_state.get( 12 );
-	        this.slots4     = (int) six_state.get( 4  );
-	        this.timeout4   = (int) six_state.get( 3  );
-	        this.increment4 = (int)  six_state.get( 11 );
+	        this.offset4    = (int) six_state.getInt(12);
+	        this.slots4     = (int) six_state.getInt(4);
+	        this.timeout4   = (int) six_state.getInt(3);
+	        this.increment4 = (int) six_state.getInt(11);
 	        this.num_cmds   = 4;
 	    }
 	}

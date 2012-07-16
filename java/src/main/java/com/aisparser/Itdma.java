@@ -24,9 +24,7 @@ public class Itdma {
     public int num_slots() { return this.num_slots; }
     public int keep_flag() { return this.keep_flag; }
     
-	public Itdma()
-	{
-	}
+	public Itdma() { }
 
 	public void parse( Sixbit six_state )
 	throws SixbitsExhaustedException, AISMessageException
@@ -34,9 +32,9 @@ public class Itdma {
 		if (six_state.bit_length() < 19)
 			throw new AISMessageException("ITDMA wrong length");
 
-        this.sync_state    = (char)  six_state.get( 2  );
-        this.slot_inc      = (int)   six_state.get( 13 );
-        this.num_slots     = (char)  six_state.get( 3  );
-        this.keep_flag     = (char)  six_state.get( 1  );
+        this.sync_state    = (int)  six_state.getInt(2);
+        this.slot_inc      = (int)   six_state.getInt(13);
+        this.num_slots     = (int)  six_state.getInt(3);
+        this.keep_flag     = (int)  six_state.getInt(1);
 	}
 }

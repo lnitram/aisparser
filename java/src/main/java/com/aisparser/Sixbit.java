@@ -19,12 +19,7 @@ public class Sixbit {
 		numBits = bitstring.length();
 	}
 
-
-	public int get(int numBits) throws SixbitsExhaustedException {
-		return getInt(numBits);
-	}
-
-	public Integer getInt(int numBits) {
+	public Integer getInt(int numBits) throws SixbitsExhaustedException {
 		String current = bitstring.substring(0,numBits);
 		bitstring = bitstring.substring(numBits);
 		return Integer.parseInt(current,2);
@@ -52,11 +47,7 @@ public class Sixbit {
 				return (char)value;
 		}
 
-	/*public String get_string(int numChars) {
-		return getString (numChars * 6);
-	}*/
-
-	public String getString(int numBits) {
+	public String getString(int numBits) throws SixbitsExhaustedException{
 		String res = "";
 		for (int i = 0; i < numBits/6; i++) {
 			int value = getInt(6);
@@ -67,7 +58,6 @@ public class Sixbit {
 
 	public int bit_length() {
 		return numBits;
-
 	}
 
 	public int length() {
@@ -77,19 +67,16 @@ public class Sixbit {
 	public int binfrom6bit(int v) {
 		String s = getSixBitString(v);
 		return Integer.parseInt(s,2);
-
 	}
 
-	public int binto6bit( int value )
-			throws IllegalArgumentException
-		{
-			if (value > 0x3F )
-				throw new IllegalArgumentException("Value is out of range (0-0x3F)");
-			if (value < 0x28)
-				return value + 0x30;
-			else
-				return value + 0x38;
-		}
+	public int binto6bit(int value) throws IllegalArgumentException {
+		if (value > 0x3F)
+			throw new IllegalArgumentException("Value is out of range (0-0x3F)");
+		if (value < 0x28)
+			return value + 0x30;
+		else
+			return value + 0x38;
+	}
 
 	public void padBits(int parseInt) {
 		numBits -=parseInt;
@@ -132,5 +119,5 @@ public class Sixbit {
 		} else {
 			return Integer.parseInt(value, 2);
 		}
-}
+	}
 }

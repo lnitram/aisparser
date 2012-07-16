@@ -14,32 +14,29 @@ package com.aisparser;
  * 
  */
 public class Message14 extends Messages {
-    int            spare;            // 2 bits   : Spare
-    String         message;          // 968 bits : Message in ASCII
+    private int            spare;            // 2 bits   : Spare
+    private String         message;          // 968 bits : Message in ASCII
 
     public int spare() { return this.spare; }
     public String message() { return this.message; }
-    
-	public Message14()
-	{
+
+	public Message14() {
 		super();
 	}
-	
+
 	public Message14(Vdm vdm) throws SixbitsExhaustedException, AISMessageException {
 		this();
 		parse(vdm.sixbit());
 	}
-	
-	public void parse( Sixbit six_state )
-		throws SixbitsExhaustedException, AISMessageException
-	{
+
+	public void parse( Sixbit six_state ) throws SixbitsExhaustedException, AISMessageException {
 		int length = six_state.bit_length();
 		if ((length < 40) || (length > 1008))
 			throw new AISMessageException("Message 14 wrong length");
-		
+
 		super.parse( 14, six_state );
 
-	    this.spare        = (int)   six_state.get( 2  );
+	    this.spare        = (int)   six_state.getInt(2);
 	    this.message = six_state.getString((length-40));
 	}
 }
