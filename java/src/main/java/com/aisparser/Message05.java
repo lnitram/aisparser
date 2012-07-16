@@ -67,8 +67,8 @@ public class Message05 extends Messages {
     
 	    this.version      = (int)  six_state.get( 2 );
 	    this.imo          = (long) six_state.get( 30 );
-	    this.callsign     =        six_state.get_string(7);
-	    this.name         =        six_state.get_string(20);	    
+	    this.callsign     =        six_state.getString(42);
+	    this.name         =        six_state.getString(120);
 	    this.ship_type    = (int)  six_state.get( 8  );
 	    this.dim_bow      = (int)  six_state.get( 9  );
 	    this.dim_stern    = (int)  six_state.get( 9  );
@@ -77,7 +77,7 @@ public class Message05 extends Messages {
 	    this.pos_type     = (int)  six_state.get( 4  );
 	    this.eta          = (long) six_state.get( 20 );
 	    this.draught      = (int)  six_state.get( 8  );
-	    this.dest         =        six_state.get_string(20);
+	    this.dest         =        six_state.getString(120);
 	    
 	}
 }

@@ -40,6 +40,6 @@ public class Message14 extends Messages {
 		super.parse( 14, six_state );
 
 	    this.spare        = (int)   six_state.get( 2  );
-	    this.message = six_state.get_string( (length-40)/6 );		
+	    this.message = six_state.getString((length-40));
 	}
 }

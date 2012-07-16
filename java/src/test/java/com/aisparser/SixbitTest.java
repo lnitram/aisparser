@@ -134,7 +134,7 @@ public class SixbitTest {
 		String s;
 		
 		six_state.init("D5CD");
-		s = six_state.get_string(4);
+		s = six_state.getString(24);
 		assertEquals("Failed to get AIS string ", "TEST", s);
 	}
 }

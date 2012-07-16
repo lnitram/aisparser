@@ -52,9 +52,9 @@ public class Sixbit {
 				return (char)value;
 		}
 
-	public String get_string(int numChars) {
+	/*public String get_string(int numChars) {
 		return getString (numChars * 6);
-	}
+	}*/
 
 	public String getString(int numBits) {
 		String res = "";

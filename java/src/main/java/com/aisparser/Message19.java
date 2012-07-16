@@ -83,7 +83,7 @@ public class Message19 extends Messages {
 	    this.true_heading   = (int)            six_state.get( 9  );
 	    this.utc_sec        = (int)            six_state.get( 6  );
 	    this.regional2      = (int)            six_state.get( 4  );
-	    this.name           = six_state.get_string(20);
+	    this.name           =                  six_state.getString(120);
 	    this.ship_type      = (int)            six_state.get( 8  );
 	    this.dim_bow        = (int)            six_state.get( 9  );
 	    this.dim_stern      = (int)            six_state.get( 9  );

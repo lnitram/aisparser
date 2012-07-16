@@ -68,15 +68,15 @@ public class Message24 extends Messages {
 	    {
 	        /* Parse 24A */
 	        /* Get the Ship Name, convert to ASCII */
-	        this.name = six_state.get_string(20);
+	        this.name = six_state.getString(120);
 	        
 	        /* Indicate reception of part A */
 	        this.flags |= 0x01;
 	    } else if( this.part_number == 1 ) {
 	        /* Parse 24B */
 	        this.ship_type = (int) six_state.get( 8  );
-	        this.vendor_id = six_state.get_string(7);
-	        this.callsign = six_state.get_string(7);
+	        this.vendor_id = six_state.getString(42);
+	        this.callsign = six_state.getString(42);
 
 	        this.dim_bow      = (int)   six_state.get( 9  );
 	        this.dim_stern    = (int)   six_state.get( 9  );

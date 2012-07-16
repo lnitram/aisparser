@@ -73,7 +73,7 @@ public class Message21 extends Messages {
 		super.parse( 21, six_state );
 
 	    this.aton_type      = (int)          six_state.get( 5  );
-	    this.name = six_state.get_string(20);
+	    this.name =                          six_state.getString(120);
 	    this.pos_acc       = (int)           six_state.get( 1  );
 
 	    this.pos = new Position(10000.*60.);
@@ -95,7 +95,7 @@ public class Message21 extends Messages {
 
 	    if( length > 272 )
 	    {
-	    	this.name_ext = six_state.get_string((length-272)/6);
+	    	this.name_ext = six_state.getString((length-272));
 	    }
 	}
 }

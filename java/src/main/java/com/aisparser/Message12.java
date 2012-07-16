@@ -50,6 +50,6 @@ public class Message12 extends Messages {
 	    this.retransmit   = (int)   six_state.get( 1  );
 	    this.spare        = (int)   six_state.get( 1  );
 
-	    this.message = six_state.get_string( (length-72)/6 );
+	    this.message = six_state.getString( (length-72));
 	}
 }
