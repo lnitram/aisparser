@@ -29,7 +29,10 @@ public class Message05 extends Messages {
     private int            dim_port;          // 6 bits          : GPS Ant. Distance from port
     private int            dim_starboard;     // 6 bits          : GPS Ant. Distance from starboard
     private int            pos_type;          // 4 bits          : Type of position fixing device
-    private long           eta;               // 20 bits         : Estimated Time of Arrival MMDDHHMM
+    private long           etaMonth;          //  4 bits
+    private long           etaDay;            //  5 bits
+    private long           etaHour;           //  5 bits
+    private long           etaMinute;         //  6 bits 
     private int            draught;           // 8 bits          : Maximum present static draught
     private String         dest;              // 6x20 (120) bits : Ship Destination
     private int            dte;               // 1 bit           : DTE flag
@@ -45,8 +48,11 @@ public class Message05 extends Messages {
     public int dim_port() { return this.dim_port; }
     public int dim_starboard() { return this.dim_starboard; }
     public int pos_type() { return this.pos_type; }
-    public long eta() { return this.eta; }
     public int draught() { return this.draught; }
+    public long eta_day() { return this.etaDay;}
+    public long eta_month() { return this.etaMonth;}
+    public long eta_hour() {return this.etaHour;}
+    public long eta_minute() { return this.etaMinute;}
     public String dest() { return this.dest; }
     public int dte() { return this.dte; }
     public int spare() { return this.spare; }
@@ -80,7 +86,10 @@ public class Message05 extends Messages {
 	    this.dim_port     = (int)  six_state.getInt(6);
 	    this.dim_starboard= (int)  six_state.getInt(6);
 	    this.pos_type     = (int)  six_state.getInt(4);
-	    this.eta          = (long) six_state.getInt(20);
+	    this.etaMonth     = (long) six_state.getInt(4);
+	    this.etaDay       = (long) six_state.getInt(5);
+	    this.etaHour      = (long) six_state.getInt(5);
+	    this.etaMinute    = (long) six_state.getInt(6);
 	    this.draught      = (int)  six_state.getInt(8);
 	    this.dest         =        six_state.getString(120);
 	}
