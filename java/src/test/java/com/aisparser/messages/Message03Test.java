@@ -12,7 +12,7 @@ public class Message03Test {
 	Vdm vdm_message;
 	Message03 msg;
 	int result;
-	
+
 	@Test
 	public void testParse()
 	{
@@ -26,26 +26,26 @@ public class Message03Test {
 		} catch (Exception e) {
 			fail(e.getMessage());
 		}
-		
+
 		assertEquals( "msgid", 3, msg.msgid());
 		assertEquals( "repeat", 0, msg.repeat());
 		assertEquals( "userid", 366789390, msg.userid());
-		assertEquals( "nav_status", 15, msg.nav_status() );
-		assertEquals( "rot", 127, msg.rot() );
-		assertEquals( "sog", 227, msg.sog() );
-		assertEquals( "pos_acc", 0, msg.pos_acc() );
-		assertEquals( "longitude", -73444450, msg.longitude() );
-		assertEquals( "latitude", 28560200, msg.latitude() );
-		assertEquals( "cog", 690, msg.cog() );
-		assertEquals( "true_heading", 79, msg.true_heading() );
-		assertEquals( "utc_sec", 52, msg.utc_sec() );
-		assertEquals( "regional", 0, msg.regional() );
-		assertEquals( "spare", 0, msg.spare() );
-		assertEquals( "raim", 0, msg.raim() );
-		assertEquals( "sync_state", 0, msg.sync_state() );
-		assertEquals( "slot_increment", 161, msg.slot_increment() );
-		assertEquals( "num_slots", 0, msg.num_slots() );
-		assertEquals( "keep", 1, msg.keep() );
+		assertEquals( "nav_status", 15, msg.getNavStatus() );
+		assertEquals( "rot", 127, msg.getRot() );
+		assertEquals( "sog", 227, msg.getSog() );
+		assertEquals( "pos_acc", 0, msg.getPosAcc() );
+		assertEquals( "longitude", -73444450, msg.getLon() );
+		assertEquals( "latitude", 28560200, msg.getLat() );
+		assertEquals( "cog", 690, msg.getCog() );
+		assertEquals( "true_heading", 79, msg.getHeading() );
+		assertEquals( "utc_sec", 52, msg.getUtcSec() );
+		assertEquals( "regional", 0, msg.getRegional() );
+		assertEquals( "spare", 0, msg.getSpare() );
+		assertEquals( "raim", 0, msg.getRaim() );
+		assertEquals( "sync_state", 0, msg.getSyncState() );
+		assertEquals( "slot_increment", 161, msg.getSlotIncrement() );
+		assertEquals( "num_slots", 0, msg.getNumSlots() );
+		assertEquals( "keep", 1, msg.getKeep() );
 	}
 
 }

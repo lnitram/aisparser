@@ -31,20 +31,20 @@ public class Message04Test {
 		assertEquals( "msgid", 4, msg.msgid());
 		assertEquals( "repeat", 0, msg.repeat());
 		assertEquals( "userid", 3669987, msg.userid());
-		assertEquals( "utc_year", 2006, msg.utc_year() );
-		assertEquals( "utc_month", 5, msg.utc_month() );
-		assertEquals( "utc_day", 23, msg.utc_day() );
-		assertEquals( "utc_hour", 20, msg.utc_hour() );
-		assertEquals( "utc_minute", 10, msg.utc_minute() );
-		assertEquals( "utc_second", 34, msg.utc_second() );
-		assertEquals( "pos_acc", 1, msg.pos_acc() );
-		assertEquals( "longitude", -73671329, msg.longitude() );
-		assertEquals( "latitude", 28529500, msg.latitude() );
-		assertEquals( "pos_type", 7, msg.pos_type() );
-		assertEquals( "spare", 0, msg.spare() );
-		assertEquals( "raim", 0, msg.raim() );
-		assertEquals( "sync_state", 0, msg.sync_state() );
-		assertEquals( "slot_timeout", 3, msg.slot_timeout() );
-		assertEquals( "sub_message", 234, msg.sub_message() );
+		assertEquals( "utc_year", 2006, msg.getUtcYear() );
+		assertEquals( "utc_month", 5, msg.getUtcMonth() );
+		assertEquals( "utc_day", 23, msg.getUtcDay() );
+		assertEquals( "utc_hour", 20, msg.getUtcHour() );
+		assertEquals( "utc_minute", 10, msg.getUtcMinute() );
+		assertEquals( "utc_second", 34, msg.getUtcSecond() );
+		assertEquals( "pos_acc", 1, msg.getPosAcc() );
+		assertEquals( "longitude", -73671329, msg.getLon() );
+		assertEquals( "latitude", 28529500, msg.getLat() );
+		assertEquals( "pos_type", 7, msg.getPosType() );
+		assertEquals( "spare", 0, msg.getSpare() );
+		assertEquals( "raim", 0, msg.getRaim() );
+		assertEquals( "sync_state", 0, msg.getSyncState() );
+		assertEquals( "slot_timeout", 3, msg.getSlotTimeout() );
+		assertEquals( "sub_message", 234, msg.getSubMessage() );
 	}
 }
