@@ -30,7 +30,7 @@ public class Message02Test {
 		} catch (Exception e) {
 			fail(e.getMessage());
 		}
-		
+
 		assertEquals( "msgid",  2, msg.msgid());
 		assertEquals( "repeat", 0, msg.repeat());
 		assertEquals( "userid", 0, msg.userid());
