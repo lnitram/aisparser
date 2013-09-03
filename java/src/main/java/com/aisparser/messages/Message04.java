@@ -30,9 +30,10 @@ public class Message04 extends Message {
 	private int             utc_minute;        // 6 bits  : UTC Minute
 	private int             utc_second;        // 6 bits  : UTC Second
 	private int             pos_acc;           // 1 bit   : Position Accuracy
-	private Position       pos;                //         : Lat/Long 1/100000 minute
+	private Position        pos;               //         : Lat/Long 1/100000 minute
 	private int             pos_type;          // 4 bits  : Type of position fixing device
-	private int             spare;             // 10 bits : Spare
+	private int             tclr;              // 1 bit   : Transmission control for long- range broadcast message 
+	private int             spare;             // 9 bits : Spare
 	private int             raim;              // 1 bit   : RAIM flag
 	private int             sync_state;        // 2 bits  : SOTDMA sync state
 	private int             slot_timeout;      // 3 bits  : SOTDMA Slot Timeout
@@ -48,6 +49,7 @@ public class Message04 extends Message {
 	public long getLon() { return this.pos.longitude(); }
 	public long getLat() { return this.pos.latitude(); }
 	public int getPosType() { return this.pos_type; }
+	public int getTcLr() { return this.tclr;}
 	public int getSpare() { return this.spare; }
 	public int getRaim() { return this.raim; }
 	public int getSyncState() { return this.sync_state; }
@@ -85,15 +87,32 @@ public class Message04 extends Message {
 		this.pos.setLatitude((long) six_state.getSignedInt(27));
 
 		this.pos_type     = (int)  six_state.getInt(4);
-		this.spare        = (int)  six_state.getInt(10);
+		this.tclr         = (int)  six_state.getInt(1);
+		this.spare        = (int)  six_state.getInt(9);
 		this.raim         = (int)  six_state.getInt(1);
 		this.sync_state   = (int)  six_state.getInt(2);
 		this.slot_timeout = (int)  six_state.getInt(3);
 		this.sub_message  = (int)  six_state.getInt(14);
 	}
-	
+
 	public Map<String,Object> getMap() {
 		Map<String,Object> m = super.getMap();
+		m.put("utc_year", this.utc_year);
+		m.put("utc_month", this.utc_month);
+		m.put("utc_day", this.utc_day);
+		m.put("utc_hour", this.utc_hour);
+		m.put("utc_minute", this.utc_minute);
+		m.put("utc_second", this.utc_second);
+		m.put("pos_acc", this.pos_acc);
+		m.put("lon", this.pos.getLongitudeDeg());
+		m.put("lat", this.pos.getLatitudeDeg());
+		m.put("pos_type", this.pos_type);
+		m.put("tclr", this.tclr);
+		m.put("spare", this.spare);
+		m.put("raim", this.raim);
+		m.put("sync_state", this.sync_state);
+		m.put("slot_timeout", this.slot_timeout);
+		m.put("sub_message", this.sub_message);
 		return m;
 	}
 }
