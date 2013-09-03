@@ -1,5 +1,7 @@
 package com.aisparser.messages;
 
+import java.util.Map;
+
 import com.aisparser.Position;
 import com.aisparser.Sixbit;
 import com.aisparser.Vdm;
@@ -19,7 +21,7 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * Channel Management
  * 
  */
-public class Message22 extends Messages {
+public class Message22 extends Message {
 	private int             spare1;            // 2 bits   : Spare
 	private int             channel_a;         // 12 bits  : M.1084 Channel A Frequency
 	private int             channel_b;         // 12 bits  : M.1084 Channel B Frequency
@@ -98,5 +100,10 @@ public class Message22 extends Messages {
 	    	this.SW_pos.setLongitude(Sixbit.getIntFromBitString(bitString2.substring(0,18),true));
 	    	this.SW_pos.setLatitude(Sixbit.getIntFromBitString(bitString2.substring(18),true));
 	    }
+	}
+	
+	public Map<String,Object> getMap() {
+		Map<String,Object> m = super.getMap();
+		return m;
 	}
 }

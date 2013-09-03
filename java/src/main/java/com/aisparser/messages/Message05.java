@@ -1,5 +1,7 @@
 package com.aisparser.messages;
 
+import java.util.Map;
+
 import com.aisparser.Sixbit;
 import com.aisparser.Vdm;
 import com.aisparser.exception.AISMessageException;
@@ -18,7 +20,7 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * Static and Voyage Related Data
  * 
  */
-public class Message05 extends Messages {
+public class Message05 extends Message {
 	private int            version;           // 2 bits          : AIS Version
 	private long           imo;               // 30 bits         : IMO Number
 	private String         callsign;          // 7x6 (42) bits   : Callsign
@@ -92,5 +94,10 @@ public class Message05 extends Messages {
 		this.etaMinute    = (long) six_state.getInt(6);
 		this.draught      = (int)  six_state.getInt(8);
 		this.dest         =        six_state.getString(120);
+	}
+	
+	public Map<String,Object> getMap() {
+		Map<String,Object> m = super.getMap();
+		return m;
 	}
 }

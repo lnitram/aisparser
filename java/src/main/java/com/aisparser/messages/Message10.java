@@ -1,5 +1,7 @@
 package com.aisparser.messages;
 
+import java.util.Map;
+
 import com.aisparser.Sixbit;
 import com.aisparser.Vdm;
 import com.aisparser.exception.AISMessageException;
@@ -17,7 +19,7 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * AIS Message 10 class
  * UTC/date inquiry
  */
-public class Message10 extends Messages {
+public class Message10 extends Message {
 	private int            spare1;            // 2 bits   : Spare
 	private long           destination;       // 30 bits  : Destination MMSI
 	private int            spare2;            // 2 bits   : Spare
@@ -47,5 +49,10 @@ public class Message10 extends Messages {
 	    this.spare1     = (int)   six_state.getInt(2);
 	    this.destination= (long)  six_state.getInt(30);
 	    this.spare2     = (int)   six_state.getInt(2);
+	}
+	
+	public Map<String,Object> getMap() {
+		Map<String,Object> m = super.getMap();
+		return m;
 	}
 }

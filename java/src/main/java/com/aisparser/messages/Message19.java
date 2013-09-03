@@ -1,5 +1,7 @@
 package com.aisparser.messages;
 
+import java.util.Map;
+
 import com.aisparser.Position;
 import com.aisparser.Sixbit;
 import com.aisparser.Vdm;
@@ -19,7 +21,7 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * Extended Class B Equipment Position Report
  * 
  */
-public class Message19 extends Messages {
+public class Message19 extends Message {
 	private int             regional1;         // 8 bits   : Regional Bits
 	private int             sog;               // 10 bits  : Speed Over Ground
 	private int             pos_acc;           // 1 bit    : Position Accuracy
@@ -99,5 +101,10 @@ public class Message19 extends Messages {
 	    this.raim           = (int)            six_state.getInt(1);
 	    this.dte            = (int)            six_state.getInt(1);
 	    this.spare          = (int)            six_state.getInt(5);
+	}
+	
+	public Map<String,Object> getMap() {
+		Map<String,Object> m = super.getMap();
+		return m;
 	}
 }

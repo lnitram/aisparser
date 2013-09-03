@@ -1,5 +1,7 @@
 package com.aisparser.messages;
 
+import java.util.Map;
+
 import com.aisparser.Sixbit;
 import com.aisparser.Vdm;
 import com.aisparser.exception.AISMessageException;
@@ -18,7 +20,7 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * Binary Broadcast Message
  * 
  */
-public class Message08 extends Messages {
+public class Message08 extends Message {
 	private int    spare;             // 2 bits   : Spare
 	private int    app_id;            // 16 bits  : Application ID
 	private Sixbit data;              // 952 bits : Data payload
@@ -51,5 +53,10 @@ public class Message08 extends Messages {
 
 	    /* Store the remaining payload of the packet for further processing */
 		this.data = six_state;
+	}
+	
+	public Map<String,Object> getMap() {
+		Map<String,Object> m = super.getMap();
+		return m;
 	}
 }

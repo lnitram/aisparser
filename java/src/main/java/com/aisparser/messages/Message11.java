@@ -1,5 +1,7 @@
 package com.aisparser.messages;
 
+import java.util.Map;
+
 import com.aisparser.Position;
 import com.aisparser.Sixbit;
 import com.aisparser.Sotdma;
@@ -20,7 +22,7 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * UTC/Date response
  * 
  */
-public class Message11 extends Messages {
+public class Message11 extends Message {
 	private int             utc_year;          // 14 bits : UTC Year
 	private int             utc_month;         // 4 bits  : UTC Month
 	private int             utc_day;           // 5 bits  : UTC Day
@@ -85,5 +87,10 @@ public class Message11 extends Messages {
 	    this.raim         = (int)            six_state.getInt(1);
 	    this.sotdma_state = new Sotdma();
 		this.sotdma_state.parse( six_state );	
+	}
+	
+	public Map<String,Object> getMap() {
+		Map<String,Object> m = super.getMap();
+		return m;
 	}
 }

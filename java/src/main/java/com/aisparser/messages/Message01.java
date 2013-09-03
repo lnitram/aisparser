@@ -1,5 +1,7 @@
 package com.aisparser.messages;
 
+import java.util.Map;
+
 import com.aisparser.Position;
 import com.aisparser.Sixbit;
 import com.aisparser.Vdm;
@@ -11,7 +13,7 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * Position Report
  * 
  */
-public class Message01 extends Messages {
+public class Message01 extends Message {
 	private int            nav_status;        // 4 bits  : Navigational Status
 	private int            rot;               // 8 bits  : Rate of Turn   
 	private int            sog;               // 10 bits : Speed Over Ground
@@ -77,5 +79,10 @@ public class Message01 extends Messages {
 		this.sync_state   = (int)  six_state.getInt(2);
 		this.slot_timeout = (int)  six_state.getInt(3);
 		this.sub_message  = (int)  six_state.getInt(14);
+	}
+
+	public Map<String,Object> getMap() {
+		Map<String,Object> m = super.getMap();
+		return m;
 	}
 }

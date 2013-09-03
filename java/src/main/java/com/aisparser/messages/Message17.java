@@ -1,5 +1,7 @@
 package com.aisparser.messages;
 
+import java.util.Map;
+
 import com.aisparser.Position;
 import com.aisparser.Sixbit;
 import com.aisparser.Vdm;
@@ -19,7 +21,7 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * DGNSS Broadcast binary message
  * 
  */
-public class Message17 extends Messages {
+public class Message17 extends Message {
 	private int             spare1;            // 2 bits      : Spare
 	private Position        pos;               //             : Lat/Long 1/10 minute
 	private int             spare2;            // 5 bits      : Spare
@@ -77,5 +79,10 @@ public class Message17 extends Messages {
 	    this.health       = (int)            six_state.getInt(3);
 
 	    this.data = six_state;
+	}
+	
+	public Map<String,Object> getMap() {
+		Map<String,Object> m = super.getMap();
+		return m;
 	}
 }

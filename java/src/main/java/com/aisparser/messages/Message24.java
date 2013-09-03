@@ -1,5 +1,7 @@
 package com.aisparser.messages;
 
+import java.util.Map;
+
 import com.aisparser.Sixbit;
 import com.aisparser.Vdm;
 import com.aisparser.exception.AISMessageException;
@@ -18,7 +20,7 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * Class B"CS" Static Data Report
  * 
  */
-public class Message24 extends Messages {
+public class Message24 extends Message {
 	private int            part_number;       // 2 bits   : Part Number
 
 	//!< Message 24A 
@@ -85,5 +87,10 @@ public class Message24 extends Messages {
 	    } else {
 	    	throw new AISMessageException("Unknown Message 24 Part #");
 	    }
+	}
+	
+	public Map<String,Object> getMap() {
+		Map<String,Object> m = super.getMap();
+		return m;
 	}
 }

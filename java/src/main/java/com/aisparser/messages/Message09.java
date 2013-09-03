@@ -1,5 +1,7 @@
 package com.aisparser.messages;
 
+import java.util.Map;
+
 import com.aisparser.Itdma;
 import com.aisparser.Position;
 import com.aisparser.Sixbit;
@@ -22,7 +24,7 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * Standard SAR Aircraft Position Report
  * 
  */
-public class Message09 extends Messages {
+public class Message09 extends Message {
 	private int            altitude;          // 12 bits  : Altitude
 	private int            sog;               // 10 bits  : Speed Over Ground
 	private int            pos_acc;           // 1 bit    : Position Accuracy
@@ -97,5 +99,10 @@ public class Message09 extends Messages {
     		this.itdma_state = new Itdma();
     		this.itdma_state.parse( six_state );
     	}
+	}
+	
+	public Map<String,Object> getMap() {
+		Map<String,Object> m = super.getMap();
+		return m;
 	}
 }

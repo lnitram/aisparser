@@ -1,5 +1,7 @@
 package com.aisparser.messages;
 
+import java.util.Map;
+
 import com.aisparser.Sixbit;
 import com.aisparser.Vdm;
 import com.aisparser.exception.AISMessageException;
@@ -18,7 +20,7 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * Assignment mode command
  * 
  */
-public class Message16 extends Messages {
+public class Message16 extends Message {
 	private int             spare1;            // 2 bits   : Spare
 	private long            destid_a;          // 30 bits  : Destination MMSI A
 	private int             offset_a;          // 12 bits  : Slot Offset A
@@ -72,5 +74,10 @@ public class Message16 extends Messages {
 	        this.spare2       = (int)   six_state.getInt(4);
 	        this.num_cmds     = 2;
 	    }
+	}
+	
+	public Map<String,Object> getMap() {
+		Map<String,Object> m = super.getMap();
+		return m;
 	}
 }

@@ -1,5 +1,7 @@
 package com.aisparser.messages;
 
+import java.util.Map;
+
 import com.aisparser.Position;
 import com.aisparser.Sixbit;
 import com.aisparser.Vdm;
@@ -19,7 +21,7 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * Group Assignment
  * 
  */
-public class Message23 extends Messages {
+public class Message23 extends Message {
 	private int             spare1;            // 2 bits   : Spare
 	private Position        NE_pos;            //          : NE Corner Lat/Long in 1/1000 minutes
 	private Position        SW_pos;            //          : SW Corner Lat/Long in 1/1000 minutes
@@ -79,5 +81,10 @@ public class Message23 extends Messages {
 	    this.report_interval= (int)           six_state.getInt(4);
 	    this.quiet_time     = (int)           six_state.getInt(4);
 	    this.spare3         = (int)           six_state.getInt(6);
+	}
+	
+	public Map<String,Object> getMap() {
+		Map<String,Object> m = super.getMap();
+		return m;
 	}
 }

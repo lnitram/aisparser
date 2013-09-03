@@ -1,5 +1,7 @@
 package com.aisparser.messages;
 
+import java.util.Map;
+
 import com.aisparser.Position;
 import com.aisparser.Sixbit;
 import com.aisparser.Vdm;
@@ -19,7 +21,7 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * Aids-to-Navigation Report
  * 
  */
-public class Message21 extends Messages {
+public class Message21 extends Message {
 	private int             aton_type;         // 5 bits    : Type of AtoN
 	private String          name;              // 120 bits  : Name of AtoN in ASCII
 	private int             pos_acc;           // 1 bit     : Position Accuracy
@@ -103,5 +105,10 @@ public class Message21 extends Messages {
 	    {
 	    	this.name_ext = six_state.getString((length-272));
 	    }
+	}
+	
+	public Map<String,Object> getMap() {
+		Map<String,Object> m = super.getMap();
+		return m;
 	}
 }
