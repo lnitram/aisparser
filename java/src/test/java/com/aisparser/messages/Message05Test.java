@@ -31,8 +31,8 @@ public class Message05Test {
 			fail(e.getMessage());
 		}
 
-		assertEquals("msgid",5,msg.msgid());
-		assertEquals("userid",370320000,msg.userid());
+		assertEquals("msgid",5,msg.getMsgId());
+		assertEquals("userid",370320000,msg.getUserId());
 		assertEquals("imo",9380271,msg.getImo());
 		assertEquals("name","COSCO NAGOYA        ",msg.getName());
 		assertEquals("callsign","3ESJ8  ",msg.getCallsign());
@@ -49,7 +49,7 @@ public class Message05Test {
 		assertEquals("draught",119,msg.getDraught());
 		assertEquals("pos_type",1,msg.getPosType());
 		assertEquals("spare",0,msg.getSpare());
-		assertEquals("repeat",0,msg.repeat());
+		assertEquals("repeat",0,msg.getRepeat());
 		assertEquals("version",0,msg.getVersion());
 		assertEquals("dte",0,msg.getDte());
 	}

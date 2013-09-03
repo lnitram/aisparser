@@ -27,9 +27,9 @@ public class Message18Test {
 			fail(e.getMessage());
 		}
 		
-		assertEquals( "msgid", 18, msg.msgid());
-		assertEquals( "repeat", 0, msg.repeat());
-		assertEquals( "userid", 338060014, msg.userid());
+		assertEquals( "msgid", 18, msg.getMsgId());
+		assertEquals( "repeat", 0, msg.getRepeat());
+		assertEquals( "userid", 338060014, msg.getUserId());
 		assertEquals("regional1", 0, msg.getRegional1());
 		assertEquals("sog", 0, msg.getSog());
 		assertEquals("pos_acc", 0, msg.getPosAcc());

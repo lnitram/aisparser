@@ -27,9 +27,9 @@ public class Message07Test {
 		}
 
 		assertEquals( "num_acks", 1, msg.getNumAcks());
-		assertEquals( "msgid", 7, msg.msgid());
-		assertEquals( "repeat", 0, msg.repeat());
-		assertEquals( "userid", 3669987, msg.userid());
+		assertEquals( "msgid", 7, msg.getMsgId());
+		assertEquals( "repeat", 0, msg.getRepeat());
+		assertEquals( "userid", 3669987, msg.getUserId());
 		assertEquals( "spare", 0, msg.getSpare());
 		assertEquals( "destid_1", 309647000, msg.getDestId1());
 		assertEquals( "sequence_1", 1, msg.getSequence1());

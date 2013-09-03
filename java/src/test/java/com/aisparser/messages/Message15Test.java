@@ -27,9 +27,9 @@ public class Message15Test {
 			fail(e.getMessage());
 		}
 	
-		assertEquals( "msgid", 15, msg.msgid());
-		assertEquals( "repeat", 0, msg.repeat());
-		assertEquals( "userid", 3669987, msg.userid());
+		assertEquals( "msgid", 15, msg.getMsgId());
+		assertEquals( "repeat", 0, msg.getRepeat());
+		assertEquals( "userid", 3669987, msg.getUserId());
 		assertEquals("num_reqs", 1, msg.getNumReqs());
 		assertEquals("spare1", 0, msg.getSpare1());
 		assertEquals("destid1", 367056192, msg.getDestid1());

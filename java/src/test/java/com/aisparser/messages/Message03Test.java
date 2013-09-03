@@ -27,9 +27,9 @@ public class Message03Test {
 			fail(e.getMessage());
 		}
 
-		assertEquals( "msgid", 3, msg.msgid());
-		assertEquals( "repeat", 0, msg.repeat());
-		assertEquals( "userid", 366789390, msg.userid());
+		assertEquals( "msgid", 3, msg.getMsgId());
+		assertEquals( "repeat", 0, msg.getRepeat());
+		assertEquals( "userid", 366789390, msg.getUserId());
 		assertEquals( "nav_status", 15, msg.getNavStatus() );
 		assertEquals( "rot", 127, msg.getRot() );
 		assertEquals( "sog", 227, msg.getSog() );

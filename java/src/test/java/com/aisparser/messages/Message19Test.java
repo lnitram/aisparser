@@ -32,9 +32,9 @@ public class Message19Test {
 			fail(e.getMessage());
 		}
 		
-		assertEquals( "msgid", 19, msg.msgid());
-		assertEquals( "repeat", 0, msg.repeat());
-		assertEquals( "userid", 0, msg.userid());
+		assertEquals( "msgid", 19, msg.getMsgId());
+		assertEquals( "repeat", 0, msg.getRepeat());
+		assertEquals( "userid", 0, msg.getUserId());
 
 	}
 }

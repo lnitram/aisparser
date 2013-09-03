@@ -34,9 +34,9 @@ public class Message08Test {
 			fail(e.getMessage());
 		}
 
-		assertEquals( "msgid", 8, msg.msgid());
-		assertEquals( "repeat", 0, msg.repeat());
-		assertEquals( "userid", 366999983, msg.userid());
+		assertEquals( "msgid", 8, msg.getMsgId());
+		assertEquals( "repeat", 0, msg.getRepeat());
+		assertEquals( "userid", 366999983, msg.getUserId());
 		assertEquals("spare", 0, msg.getSpare() );
 		assertEquals("app_id", 23481, msg.getAppId());
 		

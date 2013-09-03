@@ -28,8 +28,8 @@ public class Message22Test {
 			fail(e.getMessage());
 		}
 
-		assertEquals( "msgid", 22, msg.msgid());
-		assertEquals( "repeat", 0, msg.repeat());
+		assertEquals( "msgid", 22, msg.getMsgId());
+		assertEquals( "repeat", 0, msg.getRepeat());
 
 	}
 }

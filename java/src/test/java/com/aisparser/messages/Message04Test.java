@@ -28,9 +28,9 @@ public class Message04Test {
 			fail(e.getMessage());
 		}
 		
-		assertEquals( "msgid", 4, msg.msgid());
-		assertEquals( "repeat", 0, msg.repeat());
-		assertEquals( "userid", 3669987, msg.userid());
+		assertEquals( "msgid", 4, msg.getMsgId());
+		assertEquals( "repeat", 0, msg.getRepeat());
+		assertEquals( "userid", 3669987, msg.getUserId());
 		assertEquals( "utc_year", 2006, msg.getUtcYear() );
 		assertEquals( "utc_month", 5, msg.getUtcMonth() );
 		assertEquals( "utc_day", 23, msg.getUtcDay() );

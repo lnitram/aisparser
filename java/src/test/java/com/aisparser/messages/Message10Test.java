@@ -28,9 +28,9 @@ public class Message10Test {
 			fail(e.getMessage());
 		}
 
-		assertEquals( "msgid", 10, msg.msgid());
-		assertEquals( "repeat", 0, msg.repeat());
-		assertEquals( "userid", 356556000, msg.userid());
+		assertEquals( "msgid", 10, msg.getMsgId());
+		assertEquals( "repeat", 0, msg.getRepeat());
+		assertEquals( "userid", 356556000, msg.getUserId());
 		assertEquals("spare1", 0, msg.getSpare1());
 		assertEquals("destination", 368098000, msg.getDestination());
 		assertEquals("spare2", 0, msg.getSpare2());

@@ -26,9 +26,9 @@ public class Message11Test {
 			fail(e.getMessage());
 		}
 
-		assertEquals( "msgid", 11, msg.msgid());
-		assertEquals( "repeat", 0, msg.repeat());
-		assertEquals( "userid", 309845000, msg.userid());
+		assertEquals( "msgid", 11, msg.getMsgId());
+		assertEquals( "repeat", 0, msg.getRepeat());
+		assertEquals( "userid", 309845000, msg.getUserId());
 		assertEquals("utc_year", 2007, msg.getUtcYear());
 		assertEquals("utc_month", 4, msg.getUtcMonth());
 		assertEquals("utc_day", 25, msg.getUtcDay());

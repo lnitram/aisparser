@@ -29,9 +29,9 @@ public class Message13Test {
 		}
 
 		assertEquals( "num_acks", 1, msg.getNumAcks());
-		assertEquals( "msgid", 13, msg.msgid());
-		assertEquals( "repeat", 0, msg.repeat());
-		assertEquals( "userid", 3669987, msg.userid());
+		assertEquals( "msgid", 13, msg.getMsgId());
+		assertEquals( "repeat", 0, msg.getRepeat());
+		assertEquals( "userid", 3669987, msg.getUserId());
 		assertEquals( "spare", 0, msg.getSpare());
 		assertEquals( "destid_1", 316005498, msg.getDestId1());
 		assertEquals( "sequence_1", 0, msg.getSequence1());

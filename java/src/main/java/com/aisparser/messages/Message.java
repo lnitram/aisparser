@@ -30,9 +30,9 @@ public class Message {
 
 	public Message() {}
 
-	public int msgid() { return this.msgid; }
-	public int repeat() { return this.repeat; }
-	public long userid() { return this.userid; }
+	public int getMsgId() { return this.msgid; }
+	public int getRepeat() { return this.repeat; }
+	public long getUserId() { return this.userid; }
 
 	// Subclasses need to override with their own parsing method
 	public void parse( int msgid, Sixbit six_state ) throws SixbitsExhaustedException {

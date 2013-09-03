@@ -28,9 +28,9 @@ public class Message20Test {
 		}
 
 		assertEquals("num_cmds", 1, msg.getNumCmds());
-		assertEquals( "msgid", 20, msg.msgid());
-		assertEquals( "repeat", 0, msg.repeat());
-		assertEquals( "userid", 3669987, msg.userid());
+		assertEquals( "msgid", 20, msg.getMsgId());
+		assertEquals( "repeat", 0, msg.getRepeat());
+		assertEquals( "userid", 3669987, msg.getUserId());
 		assertEquals("spare1", 0, msg.getSpare1());
 		assertEquals("offset1", 790, msg.getOffset1());
 		assertEquals("slots1", 5, msg.getSlots1());

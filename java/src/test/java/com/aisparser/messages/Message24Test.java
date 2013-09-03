@@ -32,9 +32,9 @@ public class Message24Test {
 			fail(e.getMessage());
 		}
 
-		assertEquals( "msgid", 24, msg.msgid());
-		assertEquals( "repeat", 0, msg.repeat());
-		assertEquals( "userid", 338060014, msg.userid());
+		assertEquals( "msgid", 24, msg.getMsgId());
+		assertEquals( "repeat", 0, msg.getRepeat());
+		assertEquals( "userid", 338060014, msg.getUserId());
 		assertEquals("name", "APRIL MARU@@@@@@@@@@", msg.getName());
 		assertEquals("ship_type", 37, msg.getShipType());
 		assertEquals("vendor_id", "@@@@@@@", msg.getVendorId());

@@ -27,9 +27,9 @@ public class Message09Test {
 			fail(e.getMessage());
 		}
 
-		assertEquals( "msgid", 9, msg.msgid());
-		assertEquals( "repeat", 0, msg.repeat());
-		assertEquals( "userid", 1059, msg.userid());
+		assertEquals( "msgid", 9, msg.getMsgId());
+		assertEquals( "repeat", 0, msg.getRepeat());
+		assertEquals( "userid", 1059, msg.getUserId());
 		assertEquals("altitude", 4094, msg.getAltitiude());
 		assertEquals("sog", 299, msg.getSog());
 		assertEquals("pos_acc", 0, msg.getPosAcc());
