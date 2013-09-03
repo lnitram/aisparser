@@ -12,7 +12,7 @@ public class Message05Test {
 	Vdm vdm_message;
 	Message05 msg;
 	int result;
-	
+
 	@Test
 	public void testParse()
 	{
@@ -33,24 +33,24 @@ public class Message05Test {
 
 		assertEquals("msgid",5,msg.msgid());
 		assertEquals("userid",370320000,msg.userid());
-		assertEquals("imo",9380271,msg.imo());
-		assertEquals("name","COSCO NAGOYA        ",msg.name());
-		assertEquals("callsign","3ESJ8  ",msg.callsign());
-		assertEquals("dim_bow",200,msg.dim_bow());
-		assertEquals("dim_port",18,msg.dim_port());
-		assertEquals("dim_stern",60,msg.dim_stern());
-		assertEquals("dim_starboard",14,msg.dim_starboard());
-		assertEquals("ship_type",70,msg.ship_type());
-		assertEquals("dest","NEWYORK             ",msg.dest());
-		assertEquals("eta_month",9,msg.eta_month());
-		assertEquals("eta_day",9,msg.eta_day());
-		assertEquals("eta_hour",20,msg.eta_hour());
-		assertEquals("eta_minute",0,msg.eta_minute());
-		assertEquals("draught",119,msg.draught());
-		assertEquals("pos_type",1,msg.pos_type());
-		assertEquals("spare",0,msg.spare());
+		assertEquals("imo",9380271,msg.getImo());
+		assertEquals("name","COSCO NAGOYA        ",msg.getName());
+		assertEquals("callsign","3ESJ8  ",msg.getCallsign());
+		assertEquals("dim_bow",200,msg.getDimBow());
+		assertEquals("dim_port",18,msg.getDimPort());
+		assertEquals("dim_stern",60,msg.getDimStern());
+		assertEquals("dim_starboard",14,msg.getDimStarboard());
+		assertEquals("ship_type",70,msg.getShipType());
+		assertEquals("dest","NEWYORK             ",msg.getDest());
+		assertEquals("eta_month",9,msg.getEtaMonth());
+		assertEquals("eta_day",9,msg.getEtaDay());
+		assertEquals("eta_hour",20,msg.getEtaHour());
+		assertEquals("eta_minute",0,msg.getEtaMinute());
+		assertEquals("draught",119,msg.getDraught());
+		assertEquals("pos_type",1,msg.getPosType());
+		assertEquals("spare",0,msg.getSpare());
 		assertEquals("repeat",0,msg.repeat());
-		assertEquals("version",0,msg.version());
-		assertEquals("dte",0,msg.dte());
+		assertEquals("version",0,msg.getVersion());
+		assertEquals("dte",0,msg.getDte());
 	}
 }
