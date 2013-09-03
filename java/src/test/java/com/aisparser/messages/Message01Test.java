@@ -39,7 +39,7 @@ public class Message01Test {
 		assertEquals( "cog", 1750, msg.getCog());
 		assertEquals( "true_heading", 174, msg.getHeading());
 		assertEquals( "utc_sec", 33, msg.getUtcSec());
-		assertEquals( "regional", 0, msg.getRegional());
+		assertEquals( "smi", 0, msg.getSMI());
 		assertEquals( "spare", 0, msg.getSpare());
 		assertEquals( "raim", 0, msg.getRaim());
 		assertEquals( "sync_state", 0, msg.getSyncState());
