@@ -19,14 +19,14 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * 
  */
 public class Message08 extends Messages {
-    private int    spare;             // 2 bits   : Spare
-    private int    app_id;            // 16 bits  : Application ID
-    private Sixbit data;              // 952 bits : Data payload
-    
-    public int spare() { return this.spare; }
-    public int app_id() { return this.app_id; }
-    public Sixbit data() { return this.data; }
-    
+	private int    spare;             // 2 bits   : Spare
+	private int    app_id;            // 16 bits  : Application ID
+	private Sixbit data;              // 952 bits : Data payload
+
+	public int getSpare() { return this.spare; }
+	public int getAppId() { return this.app_id; }
+	public Sixbit getData() { return this.data; }
+
 	public Message08()
 	{
 		super();

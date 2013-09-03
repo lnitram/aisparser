@@ -21,32 +21,32 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * 
  */
 public class Message11 extends Messages {
-    private int             utc_year;          // 14 bits : UTC Year
-    private int             utc_month;         // 4 bits  : UTC Month
-    private int             utc_day;           // 5 bits  : UTC Day
-    private int             utc_hour;          // 5 bits  : UTC Hour
-    private int             utc_minute;        // 6 bits  : UTC Minute
-    private int             utc_second;        // 6 bits  : UTC Second
-    private int             pos_acc;           // 1 bit   : Position Accuracy
-    private Position        pos;               //         : Lat/Long 1/10000 minute
-    private int             pos_type;          // 4 bits  : Type of position fixing device
-    private int             spare;             // 10 bits : Spare
-    private int             raim;              // 1 bit   : RAIM flag
-    private Sotdma         sotdma_state;
-    
-    public int utc_year() { return this.utc_year; }
-    public int utc_month() { return this.utc_month; }
-    public int utc_day() { return this.utc_day; }
-    public int utc_hour() { return this.utc_hour; }
-    public int utc_minute() { return this.utc_minute; }
-    public int utc_second() { return this.utc_second; }
-    public int pos_acc() { return this.pos_acc; }
-    public long longitude() { return this.pos.longitude(); }
-    public long latitude() { return this.pos.latitude(); }
-    public int pos_type() { return this.pos_type; }
-    public int spare() { return this.spare; }
-    public int raim() { return this.raim; }
-    public Sotdma sotdma_state() { return this.sotdma_state; }
+	private int             utc_year;          // 14 bits : UTC Year
+	private int             utc_month;         // 4 bits  : UTC Month
+	private int             utc_day;           // 5 bits  : UTC Day
+	private int             utc_hour;          // 5 bits  : UTC Hour
+	private int             utc_minute;        // 6 bits  : UTC Minute
+	private int             utc_second;        // 6 bits  : UTC Second
+	private int             pos_acc;           // 1 bit   : Position Accuracy
+	private Position        pos;               //         : Lat/Long 1/10000 minute
+	private int             pos_type;          // 4 bits  : Type of position fixing device
+	private int             spare;             // 10 bits : Spare
+	private int             raim;              // 1 bit   : RAIM flag
+	private Sotdma         sotdma_state;
+
+	public int getUtcYear() { return this.utc_year; }
+	public int getUtcMonth() { return this.utc_month; }
+	public int getUtcDay() { return this.utc_day; }
+	public int getUtcHour() { return this.utc_hour; }
+	public int getUtcMinute() { return this.utc_minute; }
+	public int getUtcSecond() { return this.utc_second; }
+	public int getPosAcc() { return this.pos_acc; }
+	public long getLon() { return this.pos.longitude(); }
+	public long getLat() { return this.pos.latitude(); }
+	public int getPosType() { return this.pos_type; }
+	public int getSpare() { return this.spare; }
+	public int getRaim() { return this.raim; }
+	public Sotdma getSotdmaState() { return this.sotdma_state; }
 
 
 	public Message11()

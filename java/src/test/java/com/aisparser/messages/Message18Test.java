@@ -30,31 +30,31 @@ public class Message18Test {
 		assertEquals( "msgid", 18, msg.msgid());
 		assertEquals( "repeat", 0, msg.repeat());
 		assertEquals( "userid", 338060014, msg.userid());
-		assertEquals("regional1", 0, msg.regional1());
-		assertEquals("sog", 0, msg.sog());
-		assertEquals("pos_acc", 0, msg.pos_acc());
-		assertEquals("longitude", -93506225, msg.longitude());
-		assertEquals("latitude", 11981336, msg.latitude());
-		assertEquals("cog", 0, msg.cog());
-		assertEquals("true_heading", 511, msg.true_heading());
-		assertEquals("utc_sec", 17, msg.utc_sec());
-		assertEquals("regional2", 0, msg.regional2());
-		assertEquals("unit_flag", 1, msg.unit_flag());
-		assertEquals("display_flag", 0, msg.display_flag());
-		assertEquals("dsc_flag", 1, msg.dsc_flag());
-		assertEquals("band_flag", 1, msg.band_flag());
-		assertEquals("msg22_flag", 1, msg.msg22_flag());
-		assertEquals("mode_flag", 0, msg.mode_flag());
-		assertEquals("raim", 0, msg.raim());
-		assertEquals("comm_state", 1, msg.comm_state());
-		if (msg.comm_state() == 0)
+		assertEquals("regional1", 0, msg.getRegional1());
+		assertEquals("sog", 0, msg.getSog());
+		assertEquals("pos_acc", 0, msg.getPosAcc());
+		assertEquals("longitude", -93506225, msg.getLon());
+		assertEquals("latitude", 11981336, msg.getLat());
+		assertEquals("cog", 0, msg.getCog());
+		assertEquals("true_heading", 511, msg.getTrueHeading());
+		assertEquals("utc_sec", 17, msg.getUtcSec());
+		assertEquals("regional2", 0, msg.getRegional2());
+		assertEquals("unit_flag", 1, msg.getUnitFlag());
+		assertEquals("display_flag", 0, msg.getDisplayFlag());
+		assertEquals("dsc_flag", 1, msg.getDscFlag());
+		assertEquals("band_flag", 1, msg.getBandFlag());
+		assertEquals("msg22_flag", 1, msg.getMsg22Flag());
+		assertEquals("mode_flag", 0, msg.getModeFlag());
+		assertEquals("raim", 0, msg.getRaim());
+		assertEquals("comm_state", 1, msg.getCommState());
+		if (msg.getCommState() == 0)
 		{
 			fail("sotdma state");
 		} else {
-			assertEquals("itdma.sync_state", 3, msg.itdma_state().sync_state());
-			assertEquals("itdma.slot_inc", 0, msg.itdma_state().slot_inc());
-			assertEquals("itdma.num_slots", 3, msg.itdma_state().num_slots());
-			assertEquals("itdma.keep_flag", 0, msg.itdma_state().keep_flag());
+			assertEquals("itdma.sync_state", 3, msg.getItdmaState().sync_state());
+			assertEquals("itdma.slot_inc", 0, msg.getItdmaState().slot_inc());
+			assertEquals("itdma.num_slots", 3, msg.getItdmaState().num_slots());
+			assertEquals("itdma.keep_flag", 0, msg.getItdmaState().keep_flag());
 		}
 	}
 }

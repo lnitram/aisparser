@@ -20,44 +20,44 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * 
  */
 public class Message21 extends Messages {
-    private int             aton_type;         // 5 bits    : Type of AtoN
-    private String          name;              // 120 bits  : Name of AtoN in ASCII
-    private int             pos_acc;           // 1 bit     : Position Accuracy
-    private Position       pos;                //           : Lat/Long 1/100000 minute
-    private int             dim_bow;           // 9 bits    : GPS Ant. Distance from Bow
-    private int             dim_stern;         // 9 bits    : GPS Ant. Distance from Stern
-    private int             dim_port;          // 6 bits    : GPS Ant. Distance from Port
-    private int             dim_starboard;     // 6 bits    : GPS Ant. Distance from Starboard
-    private int             pos_type;          // 4 bits    : Type of Position Fixing Device
-    private int             utc_sec;           // 6 bits    : UTC Seconds
-    private int             off_position;      // 1 bit     : Off Position Flag
-    private int             regional;          // 8 bits    : Regional Bits
-    private int             raim;              // 1 bit     : RAIM Flag
-    private int             virtual;           // 1 bit     : Virtual/Pseudo AtoN Flag
-    private int             assigned;          // 1 bit     : Assigned Mode Flag
-    private int             spare1;            // 1 bit     : Spare
-    private String          name_ext;          // 0-84 bits : Extended name in ASCII
-    private int             spare2;            // 0-6 bits  : Spare
-    
-    public int aton_type() { return this.aton_type; }
-    public String name() { return this.name; }
-    public int pos_acc() { return this.pos_acc; }
-    public long longitude() { return this.pos.longitude(); }
-    public long latitude() { return this.pos.latitude(); }
-    public int dim_bow() { return this.dim_bow; }
-    public int dim_stern() { return this.dim_stern; }
-    public int dim_port() { return this.dim_port; }
-    public int dim_starboard() { return this.dim_starboard; }
-    public int pos_type() { return this.pos_type; }
-    public int utc_sec() { return this.utc_sec; }
-    public int off_position() { return this.off_position; }
-    public int regional() { return this.regional; }
-    public int raim() { return this.raim; }
-    public int virtual() { return this.virtual; }
-    public int assigned() { return this.assigned; }
-    public int spare1() { return this.spare1; }
-    public String name_ext() { return this.name_ext; }
-    public int spare2() { return this.spare2; }
+	private int             aton_type;         // 5 bits    : Type of AtoN
+	private String          name;              // 120 bits  : Name of AtoN in ASCII
+	private int             pos_acc;           // 1 bit     : Position Accuracy
+	private Position        pos;                //           : Lat/Long 1/100000 minute
+	private int             dim_bow;           // 9 bits    : GPS Ant. Distance from Bow
+	private int             dim_stern;         // 9 bits    : GPS Ant. Distance from Stern
+	private int             dim_port;          // 6 bits    : GPS Ant. Distance from Port
+	private int             dim_starboard;     // 6 bits    : GPS Ant. Distance from Starboard
+	private int             pos_type;          // 4 bits    : Type of Position Fixing Device
+	private int             utc_sec;           // 6 bits    : UTC Seconds
+	private int             off_position;      // 1 bit     : Off Position Flag
+	private int             regional;          // 8 bits    : Regional Bits
+	private int             raim;              // 1 bit     : RAIM Flag
+	private int             virtual;           // 1 bit     : Virtual/Pseudo AtoN Flag
+	private int             assigned;          // 1 bit     : Assigned Mode Flag
+	private int             spare1;            // 1 bit     : Spare
+	private String          name_ext;          // 0-84 bits : Extended name in ASCII
+	private int             spare2;            // 0-6 bits  : Spare
+
+	public int getAtonType() { return this.aton_type; }
+	public String getName() { return this.name; }
+	public int getPosAcc() { return this.pos_acc; }
+	public long getLon() { return this.pos.longitude(); }
+	public long getLat() { return this.pos.latitude(); }
+	public int getDimBow() { return this.dim_bow; }
+	public int getDimStern() { return this.dim_stern; }
+	public int getDimPort() { return this.dim_port; }
+	public int getDimStarboard() { return this.dim_starboard; }
+	public int getPosType() { return this.pos_type; }
+	public int getUtcSec() { return this.utc_sec; }
+	public int getOffPosition() { return this.off_position; }
+	public int getRegional() { return this.regional; }
+	public int getRaim() { return this.raim; }
+	public int getVirtual() { return this.virtual; }
+	public int getAssigned() { return this.assigned; }
+	public int getSpare1() { return this.spare1; }
+	public String getNameExt() { return this.name_ext; }
+	public int getSpare2() { return this.spare2; }
 
 	public Message21()
 	{

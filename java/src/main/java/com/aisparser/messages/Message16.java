@@ -19,25 +19,25 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * 
  */
 public class Message16 extends Messages {
-    private int             spare1;            // 2 bits   : Spare
-    private long            destid_a;          // 30 bits  : Destination MMSI A
-    private int             offset_a;          // 12 bits  : Slot Offset A
-    private int             increment_a;       // 10 bits  : Increment A
-    private long            destid_b;          // 30 bits  : Destination MMSI B
-    private int             offset_b;          // 12 bits  : Slot Offset B
-    private int             increment_b;       // 10 bits  : Increment B
-    private int             spare2;            // 4 bits   : Spare
-    private int             num_cmds;          // Number of commands received
+	private int             spare1;            // 2 bits   : Spare
+	private long            destid_a;          // 30 bits  : Destination MMSI A
+	private int             offset_a;          // 12 bits  : Slot Offset A
+	private int             increment_a;       // 10 bits  : Increment A
+	private long            destid_b;          // 30 bits  : Destination MMSI B
+	private int             offset_b;          // 12 bits  : Slot Offset B
+	private int             increment_b;       // 10 bits  : Increment B
+	private int             spare2;            // 4 bits   : Spare
+	private int             num_cmds;          // Number of commands received
 
-    public int spare1() { return this.spare1; }
-    public long destid_a() { return this.destid_a; }
-    public int offset_a() { return this.offset_a; }
-    public int increment_a() { return this.increment_a; }
-    public long destid_b() { return this.destid_b; }
-    public int offset_b() { return this.offset_b; }
-    public int increment_b() { return this.increment_b; }
-    public int spare2() { return this.spare2; }
-    public int num_cmds() { return this.num_cmds; }
+	public int getSpare1() { return this.spare1; }
+	public long getDestIdA() { return this.destid_a; }
+	public int getOffsetA() { return this.offset_a; }
+	public int getIncrementA() { return this.increment_a; }
+	public long getDestIdB() { return this.destid_b; }
+	public int getOffsetB() { return this.offset_b; }
+	public int getIncrementB() { return this.increment_b; }
+	public int getSpare2() { return this.spare2; }
+	public int getNumCmds() { return this.num_cmds; }
 
 	public Message16()
 	{

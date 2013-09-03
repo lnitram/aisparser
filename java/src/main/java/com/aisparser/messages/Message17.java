@@ -20,29 +20,29 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * 
  */
 public class Message17 extends Messages {
-    private int             spare1;            // 2 bits      : Spare
-    private Position        pos;               //             : Lat/Long 1/10 minute
-    private int             spare2;            // 5 bits      : Spare
-    private int             msg_type;          // 6 bits      : Mesage Type from M.823
-    private int             station_id;        // 10 bits     : Station ID from M.823
-    private int             z_count;           // 13 bits     : Z Count
-    private int             seq_num;           // 3 bits      : Sequence Number
-    private int             num_words;         // 5 bits      : Number of Data Words
-    private int             health;            // 3 bits      : Reference Station Health from M.823
-    private Sixbit          data;              // 0-696 bits  : Data payload
-    
-    public int spare1() { return this.spare1; }
-    public long longitude() { return this.pos.longitude(); }
-    public long latitude() { return this.pos.latitude(); }
-    public int spare2() { return this.spare2; }
-    public int msg_type() { return this.msg_type; }
-    public int station_id() { return this.station_id; }
-    public int z_count() { return this.z_count; }
-    public int seq_num() { return this.seq_num; }
-    public int num_words() { return this.num_words; }
-    public int health() { return this.health; }
-    public Sixbit data() { return this.data; }
-    
+	private int             spare1;            // 2 bits      : Spare
+	private Position        pos;               //             : Lat/Long 1/10 minute
+	private int             spare2;            // 5 bits      : Spare
+	private int             msg_type;          // 6 bits      : Mesage Type from M.823
+	private int             station_id;        // 10 bits     : Station ID from M.823
+	private int             z_count;           // 13 bits     : Z Count
+	private int             seq_num;           // 3 bits      : Sequence Number
+	private int             num_words;         // 5 bits      : Number of Data Words
+	private int             health;            // 3 bits      : Reference Station Health from M.823
+	private Sixbit          data;              // 0-696 bits  : Data payload
+
+	public int getSpare1() { return this.spare1; }
+	public long getLon() { return this.pos.longitude(); }
+	public long getLat() { return this.pos.latitude(); }
+	public int getSpare2() { return this.spare2; }
+	public int getMsgType() { return this.msg_type; }
+	public int getStationId() { return this.station_id; }
+	public int getZCount() { return this.z_count; }
+	public int getSeqNum() { return this.seq_num; }
+	public int getNumWords() { return this.num_words; }
+	public int getHealth() { return this.health; }
+	public Sixbit getData() { return this.data; }
+
 	public Message17()
 	{
 		super();

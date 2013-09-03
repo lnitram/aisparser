@@ -20,38 +20,38 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * 
  */
 public class Message22 extends Messages {
-    private int             spare1;            // 2 bits   : Spare
-    private int             channel_a;         // 12 bits  : M.1084 Channel A Frequency
-    private int             channel_b;         // 12 bits  : M.1084 Channel B Frequency
-    private int             txrx_mode;         // 4 bits   : TX/RX Mode
-    private int             power;             // 1 bit    : Power Level
-    private Position        NE_pos;            //          : NE Corner Lat/Long in 1/1000 minutes
-    private long            addressed_1;       // 30 bits  : Destination MMSI 1
-    private Position        SW_pos;            //          : SW Corner Lat/Long in 1/1000 minutes
-    private long            addressed_2;       // 30 bits  : Destination MMSI 2
-    private int             addressed;         // 1 bit    : Addressed flag
-    private int             bw_a;              // 1 bit    : Channel A Bandwidth
-    private int             bw_b;              // 1 bit    : Channel B Bandwidth
-    private int             tz_size;           // 3 bits   : Transitional Zone size
-    private long            spare2;            // 23 bits  : Spare
-    
-    public int spare1() { return this.spare1; }
-    public int channel_a() { return this.channel_a; }
-    public int channel_b() { return this.channel_b; }
-    public int txrx_mode() { return this.txrx_mode; }
-    public int power() { return this.power; }
-    public long NE_longitude() { return this.NE_pos.longitude(); }
-    public long NE_latitude() { return this.NE_pos.latitude(); }
-    public long addressed_1() { return this.addressed_1; }
-    public long SW_longitude() { return this.SW_pos.longitude(); }
-    public long SW_latitude() { return this.SW_pos.latitude(); }
-    public long addressed_2() { return this.addressed_2; }
-    public int addressed() { return this.addressed; }
-    public int bw_a() { return this.bw_a; }
-    public int bw_b() { return this.bw_b; }
-    public int tz_size() { return this.tz_size; }
-    public long spare2() { return this.spare2; }
-    
+	private int             spare1;            // 2 bits   : Spare
+	private int             channel_a;         // 12 bits  : M.1084 Channel A Frequency
+	private int             channel_b;         // 12 bits  : M.1084 Channel B Frequency
+	private int             txrx_mode;         // 4 bits   : TX/RX Mode
+	private int             power;             // 1 bit    : Power Level
+	private Position        NE_pos;            //          : NE Corner Lat/Long in 1/1000 minutes
+	private long            addressed_1;       // 30 bits  : Destination MMSI 1
+	private Position        SW_pos;            //          : SW Corner Lat/Long in 1/1000 minutes
+	private long            addressed_2;       // 30 bits  : Destination MMSI 2
+	private int             addressed;         // 1 bit    : Addressed flag
+	private int             bw_a;              // 1 bit    : Channel A Bandwidth
+	private int             bw_b;              // 1 bit    : Channel B Bandwidth
+	private int             tz_size;           // 3 bits   : Transitional Zone size
+	private long            spare2;            // 23 bits  : Spare
+
+	public int getSpare1() { return this.spare1; }
+	public int getChannelA() { return this.channel_a; }
+	public int getChannelB() { return this.channel_b; }
+	public int getTxRxMode() { return this.txrx_mode; }
+	public int getPower() { return this.power; }
+	public long getNELon() { return this.NE_pos.longitude(); }
+	public long getNELat() { return this.NE_pos.latitude(); }
+	public long getAddressed1() { return this.addressed_1; }
+	public long getSWLon() { return this.SW_pos.longitude(); }
+	public long getSWLat() { return this.SW_pos.latitude(); }
+	public long getAddressed2() { return this.addressed_2; }
+	public int getAddressed() { return this.addressed; }
+	public int getBwA() { return this.bw_a; }
+	public int getBwB() { return this.bw_b; }
+	public int getTzSize() { return this.tz_size; }
+	public long getSpare2() { return this.spare2; }
+
 	public Message22()
 	{
 		super();

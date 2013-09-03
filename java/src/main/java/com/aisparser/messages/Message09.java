@@ -23,37 +23,37 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * 
  */
 public class Message09 extends Messages {
-    private int            altitude;          // 12 bits  : Altitude
-    private int            sog;               // 10 bits  : Speed Over Ground
-    private int            pos_acc;           // 1 bit    : Position Accuracy
-    private Position       pos;               //          : Lat/Long 1/100000 minute
-    private int            cog;               // 12 bits  : Course Over Ground
-    private int            utc_sec;           // 6 bits   : UTC Seconds
-    private int            regional;          // 8 bits   : Regional bits
-    private int            dte;               // 1 bit    : DTE flag
-    private int            spare;             // 3 bits   : Spare
-    private int            assigned;          // 1 bit    : Assigned mode flag
-    private int            raim;              // 1 bit    : RAIM flag
-    private int            comm_state;        // 1 bit    : Comm State Flag
-    private Sotdma         sotdma_state = null;
-    private Itdma          itdma_state = null;
-    
-    public int altitiude() { return this.altitude; }
-    public int sog() { return this.sog; }
-    public int pos_acc() { return this.pos_acc; }
-    public long longitude() { return this.pos.longitude(); }
-    public long latitude() { return this.pos.latitude(); }
-    public int cog() { return this.cog; }
-    public int utc_sec() { return this.utc_sec; }
-    public int regional() { return this.regional; }
-    public int dte() { return this.dte; }
-    public int spare() { return this.spare; }
-    public int assigned() { return this.assigned; }
-    public int raim() { return this.raim; }
-    public int comm_state() { return this.comm_state; }
-    public Sotdma sotdma_state() { return this.sotdma_state; }
-    public Itdma itdma_state() { return this.itdma_state; }
-    
+	private int            altitude;          // 12 bits  : Altitude
+	private int            sog;               // 10 bits  : Speed Over Ground
+	private int            pos_acc;           // 1 bit    : Position Accuracy
+	private Position       pos;               //          : Lat/Long 1/100000 minute
+	private int            cog;               // 12 bits  : Course Over Ground
+	private int            utc_sec;           // 6 bits   : UTC Seconds
+	private int            regional;          // 8 bits   : Regional bits
+	private int            dte;               // 1 bit    : DTE flag
+	private int            spare;             // 3 bits   : Spare
+	private int            assigned;          // 1 bit    : Assigned mode flag
+	private int            raim;              // 1 bit    : RAIM flag
+	private int            comm_state;        // 1 bit    : Comm State Flag
+	private Sotdma         sotdma_state = null;
+	private Itdma          itdma_state = null;
+
+	public int getAltitiude() { return this.altitude; }
+	public int getSog() { return this.sog; }
+	public int getPosAcc() { return this.pos_acc; }
+	public long getLon() { return this.pos.longitude(); }
+	public long getLat() { return this.pos.latitude(); }
+	public int getCog() { return this.cog; }
+	public int getUtcSec() { return this.utc_sec; }
+	public int getRegional() { return this.regional; }
+	public int getDte() { return this.dte; }
+	public int getSpare() { return this.spare; }
+	public int getAssigned() { return this.assigned; }
+	public int getRaim() { return this.raim; }
+	public int getCommState() { return this.comm_state; }
+	public Sotdma getSotdmaState() { return this.sotdma_state; }
+	public Itdma getItdmaState() { return this.itdma_state; }
+
 	public Message09()
 	{
 		super();

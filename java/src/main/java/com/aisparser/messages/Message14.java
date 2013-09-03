@@ -19,11 +19,11 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * 
  */
 public class Message14 extends Messages {
-    private int            spare;            // 2 bits   : Spare
-    private String         message;          // 968 bits : Message in ASCII
+	private int            spare;            // 2 bits   : Spare
+	private String         message;          // 968 bits : Message in ASCII
 
-    public int spare() { return this.spare; }
-    public String message() { return this.message; }
+	public int getSpare() { return this.spare; }
+	public String getMessage() { return this.message; }
 
 	public Message14() {
 		super();

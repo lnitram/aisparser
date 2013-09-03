@@ -37,10 +37,10 @@ public class Message08Test {
 		assertEquals( "msgid", 8, msg.msgid());
 		assertEquals( "repeat", 0, msg.repeat());
 		assertEquals( "userid", 366999983, msg.userid());
-		assertEquals("spare", 0, msg.spare() );
-		assertEquals("app_id", 23481, msg.app_id());
+		assertEquals("spare", 0, msg.getSpare() );
+		assertEquals("app_id", 23481, msg.getAppId());
 		
-		Sixbit data = msg.data();
+		Sixbit data = msg.getData();
 		assertEquals("data length", 568, data.bit_length());
 		
 		// Here is where the payload would be parsed, if we knew how...	

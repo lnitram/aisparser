@@ -30,11 +30,11 @@ public class Message15Test {
 		assertEquals( "msgid", 15, msg.msgid());
 		assertEquals( "repeat", 0, msg.repeat());
 		assertEquals( "userid", 3669987, msg.userid());
-		assertEquals("num_reqs", 1, msg.num_reqs());
-		assertEquals("spare1", 0, msg.spare1());
-		assertEquals("destid1", 367056192, msg.destid1());
-		assertEquals("msgid1_1", 0, msg.msgid1_1());
-		assertEquals("offset1_1", 0, msg.offset1_1());
+		assertEquals("num_reqs", 1, msg.getNumReqs());
+		assertEquals("spare1", 0, msg.getSpare1());
+		assertEquals("destid1", 367056192, msg.getDestid1());
+		assertEquals("msgid1_1", 0, msg.getMsgId1_1());
+		assertEquals("offset1_1", 0, msg.getOffset1_1());
 	}
 
 }

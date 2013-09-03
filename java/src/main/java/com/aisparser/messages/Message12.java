@@ -19,18 +19,18 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * 
  */
 public class Message12 extends Messages {
-    private int            sequence;          // 2 bits   : Sequence
-    private long           destination;       // 30 bits  : Destination MMSI
-    private int            retransmit;        // 1 bit    : Retransmit
-    private int            spare;             // 1 bit    : Spare
-    private String         message;           // 936 bits : Message in ASCII   
-    
-    public int sequence() { return this.sequence; }
-    public long destination() { return this.destination; }
-    public int retransmit() { return this.retransmit; }
-    public int spare() { return this.spare; }
-    public String message() { return this.message; }
-    
+	private int            sequence;          // 2 bits   : Sequence
+	private long           destination;       // 30 bits  : Destination MMSI
+	private int            retransmit;        // 1 bit    : Retransmit
+	private int            spare;             // 1 bit    : Spare
+	private String         message;           // 936 bits : Message in ASCII   
+
+	public int getSequence() { return this.sequence; }
+	public long getDestination() { return this.destination; }
+	public int getRetransmit() { return this.retransmit; }
+	public int getSpare() { return this.spare; }
+	public String getMessage() { return this.message; }
+
 	public Message12()
 	{
 		super();

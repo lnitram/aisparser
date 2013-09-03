@@ -20,45 +20,45 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * 
  */
 public class Message19 extends Messages {
-    private int             regional1;         // 8 bits   : Regional Bits
-    private int             sog;               // 10 bits  : Speed Over Ground
-    private int             pos_acc;           // 1 bit    : Position Accuracy
-    private Position        pos;               //          : Lat/Long 1/100000 minute
-    private int             cog;               // 12 bits  : Course Over Ground
-    private int             true_heading;      // 9 bits   : True Heading
-    private int             utc_sec;           // 6 bits   : UTC Seconds
-    private int             regional2;         // 4 bits   : Regional Bits
-    private String          name;              // 120 bits : Ship Name in ASCII
-    private int             ship_type;         // 8 bits   : Type of Ship and Cargo
-    private int             dim_bow;           // 9 bits   : GPS Ant. Distance from Bow
-    private int             dim_stern;         // 9 bits   : GPS Ant. Distance from Stern   
-    private int             dim_port;          // 6 bits   : GPS Ant. Distance from Port
-    private int             dim_starboard;     // 6 bits   : GPS Ant. Distance from Starboard
-    private int             pos_type;          // 4 bits   : Type of Position Fixing Device
-    private int             raim;              // 1 bit    : RAIM Flag
-    private int             dte;               // 1 bit    : DTE Flag
-    private int             spare;             // 5 bits   : Spare
-    
-    public int regional1() { return this.regional1; }
-    public int sog() { return this.sog; }
-    public int pos_acc() { return this.pos_acc; }
-    public long longitude() { return this.pos.longitude(); }
-    public long latitude() { return this.pos.latitude(); }
-    public int cog() { return this.cog; }
-    public int true_heading() { return this.true_heading; }
-    public int utc_sec() { return this.utc_sec; }
-    public int regional2() { return this.regional2; }
-    public String name() { return this.name; }
-    public int ship_type() { return this.ship_type; }
-    public int dim_bow() { return this.dim_bow; }
-    public int dim_stern() { return this.dim_stern; }
-    public int dim_port() { return this.dim_port; }
-    public int dim_starboard() { return this.dim_starboard; }
-    public int pos_type() { return this.pos_type; }
-    public int raim() { return this.raim; }
-    public int dte() { return this.dte; }
-    public int spare() { return this.spare; }
-    
+	private int             regional1;         // 8 bits   : Regional Bits
+	private int             sog;               // 10 bits  : Speed Over Ground
+	private int             pos_acc;           // 1 bit    : Position Accuracy
+	private Position        pos;               //          : Lat/Long 1/100000 minute
+	private int             cog;               // 12 bits  : Course Over Ground
+	private int             true_heading;      // 9 bits   : True Heading
+	private int             utc_sec;           // 6 bits   : UTC Seconds
+	private int             regional2;         // 4 bits   : Regional Bits
+	private String          name;              // 120 bits : Ship Name in ASCII
+	private int             ship_type;         // 8 bits   : Type of Ship and Cargo
+	private int             dim_bow;           // 9 bits   : GPS Ant. Distance from Bow
+	private int             dim_stern;         // 9 bits   : GPS Ant. Distance from Stern   
+	private int             dim_port;          // 6 bits   : GPS Ant. Distance from Port
+	private int             dim_starboard;     // 6 bits   : GPS Ant. Distance from Starboard
+	private int             pos_type;          // 4 bits   : Type of Position Fixing Device
+	private int             raim;              // 1 bit    : RAIM Flag
+	private int             dte;               // 1 bit    : DTE Flag
+	private int             spare;             // 5 bits   : Spare
+
+	public int getRegional1() { return this.regional1; }
+	public int getSog() { return this.sog; }
+	public int getPosAcc() { return this.pos_acc; }
+	public long getLon() { return this.pos.longitude(); }
+	public long getLat() { return this.pos.latitude(); }
+	public int getCog() { return this.cog; }
+	public int getTrueHeading() { return this.true_heading; }
+	public int getUtcSec() { return this.utc_sec; }
+	public int getRegional2() { return this.regional2; }
+	public String getName() { return this.name; }
+	public int getShipType() { return this.ship_type; }
+	public int getDimBow() { return this.dim_bow; }
+	public int getDimStern() { return this.dim_stern; }
+	public int getDimPort() { return this.dim_port; }
+	public int getDimStarboard() { return this.dim_starboard; }
+	public int getPosType() { return this.pos_type; }
+	public int getRaim() { return this.raim; }
+	public int getDte() { return this.dte; }
+	public int getSpare() { return this.spare; }
+
 	public Message19()
 	{
 		super();

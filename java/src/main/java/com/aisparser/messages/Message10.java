@@ -18,13 +18,13 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * UTC/date inquiry
  */
 public class Message10 extends Messages {
-    private int            spare1;            // 2 bits   : Spare
-    private long           destination;       // 30 bits  : Destination MMSI
-    private int            spare2;            // 2 bits   : Spare
+	private int            spare1;            // 2 bits   : Spare
+	private long           destination;       // 30 bits  : Destination MMSI
+	private int            spare2;            // 2 bits   : Spare
 
-    public int spare1() { return this.spare1; }
-    public long destination() { return this.destination; }
-    public int spare2() { return this.spare2; }
+	public int getSpare1() { return this.spare1; }
+	public long getDestination() { return this.destination; }
+	public int getSpare2() { return this.spare2; }
 
 	public Message10()
 	{

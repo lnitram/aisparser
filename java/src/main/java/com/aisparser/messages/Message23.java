@@ -20,29 +20,30 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * 
  */
 public class Message23 extends Messages {
-    private int             spare1;            // 2 bits   : Spare
-    private Position        NE_pos;            //          : NE Corner Lat/Long in 1/1000 minutes
-    private Position        SW_pos;            //          : SW Corner Lat/Long in 1/1000 minutes
-    private int             station_type;      // 4 bits   : Station Type
-    private int             ship_type;         // 8 bits   : Type of Ship and Cargo
-    private long            spare2;            // 22 bits  : Spare
-    private int             txrx_mode;         // 2 bits   : TX/RX Mode
-    private int             report_interval;   // 4 bits   : Reporting Interval from IEC 62287 Table 17
-    private int             quiet_time;        // 4 bits   : Quiet Time in Minutes
-    private int             spare3;            // 6 bits   : Spare
-    
-    public int spare1() { return this.spare1; }
-    public long NE_longitude() { return this.NE_pos.longitude(); }
-    public long NE_latitude() { return this.NE_pos.latitude(); }
-    public long SW_longitude() { return this.SW_pos.longitude(); }
-    public long SW_latitude() { return this.SW_pos.latitude(); }
-    public int station_type() { return this.station_type; }
-    public int ship_type() { return this.ship_type; }
-    public long spare2() { return this.spare2; }
-    public int txrx_mode() { return this.txrx_mode; }
-    public int quiet_time() { return this.quiet_time; }
-    public int spare3() { return this.spare3; }
-    
+	private int             spare1;            // 2 bits   : Spare
+	private Position        NE_pos;            //          : NE Corner Lat/Long in 1/1000 minutes
+	private Position        SW_pos;            //          : SW Corner Lat/Long in 1/1000 minutes
+	private int             station_type;      // 4 bits   : Station Type
+	private int             ship_type;         // 8 bits   : Type of Ship and Cargo
+	private long            spare2;            // 22 bits  : Spare
+	private int             txrx_mode;         // 2 bits   : TX/RX Mode
+	private int             report_interval;   // 4 bits   : Reporting Interval from IEC 62287 Table 17
+	private int             quiet_time;        // 4 bits   : Quiet Time in Minutes
+	private int             spare3;            // 6 bits   : Spare
+
+	public int spare1() { return this.spare1; }
+	public long getNELon() { return this.NE_pos.longitude(); }
+	public long getNELat() { return this.NE_pos.latitude(); }
+	public long getSWLon() { return this.SW_pos.longitude(); }
+	public long getSWLat() { return this.SW_pos.latitude(); }
+	public int getStationType() { return this.station_type; }
+	public int getShipType() { return this.ship_type; }
+	public long getSpare2() { return this.spare2; }
+	public int getTxTxMode() { return this.txrx_mode; }
+	public int getReportInterval() { return this.report_interval;}
+	public int getQuietTime() { return this.quiet_time; }
+	public int getSpare3() { return this.spare3; }
+
 	public Message23()
 	{
 		super();

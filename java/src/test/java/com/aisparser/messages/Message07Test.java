@@ -21,19 +21,18 @@ public class Message07Test {
 		try {
 			result = vdm_message.add("!AIVDM,1,1,,A,703Owpi9lmaQ,0*3B");
 			assertEquals( "vdm add failed", 0, result );
-			 
 			msg.parse( vdm_message.sixbit() );
 		} catch (Exception e) {
 			fail(e.getMessage());
 		}
 
-		assertEquals( "num_acks", 1, msg.num_acks());
+		assertEquals( "num_acks", 1, msg.getNumAcks());
 		assertEquals( "msgid", 7, msg.msgid());
 		assertEquals( "repeat", 0, msg.repeat());
 		assertEquals( "userid", 3669987, msg.userid());
-		assertEquals( "spare", 0, msg.spare());
-		assertEquals( "destid_1", 309647000, msg.destid_1());
-		assertEquals( "sequence_1", 1, msg.sequence_1());
+		assertEquals( "spare", 0, msg.getSpare());
+		assertEquals( "destid_1", 309647000, msg.getDestId1());
+		assertEquals( "sequence_1", 1, msg.getSequence1());
 	}
 
 }

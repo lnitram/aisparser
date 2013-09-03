@@ -19,46 +19,46 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * 
  */
 public class Message20 extends Messages {
-    private int             spare1;            // 2 bits   : Spare
-    private int             offset1;           // 12 bits  : Slot Offset 1
-    private int             slots1;            // 4 bits   : Number of Slots 1
-    private int             timeout1;          // 3 bits   : Timeout in Minutes 2
-    private int             increment1;        // 11 bits  : Slot Increment 1
-    private int             offset2;           // 12 bits  : Slot Offset 2
-    private int             slots2;            // 4 bits   : Number of Slots 2
-    private int             timeout2;          // 3 bits   : Timeout in Minutes 2
-    private int             increment2;        // 11 bits  : Slot Increment 2
-    private int             offset3;           // 12 bits  : Slot Offset 3
-    private int             slots3;            // 4 bits   : Number of Slots 3
-    private int             timeout3;          // 3 bits   : Timeout in Minutes 3
-    private int             increment3;        // 11 bits  : Slot Increment 3
-    private int             offset4;           // 12 bits  : Slot Offset 4
-    private int             slots4;            // 4 bits   : Number of Slots 4
-    private int             timeout4;          // 3 bits   : Timeout in Minutes 4
-    private int             increment4;        // 11 bits  : Slot Increment 4
-    private int             spare2;            // 0-6 bits : Spare
-    private int             num_cmds;          // Number of commands received
+	private int             spare1;            // 2 bits   : Spare
+	private int             offset1;           // 12 bits  : Slot Offset 1
+	private int             slots1;            // 4 bits   : Number of Slots 1
+	private int             timeout1;          // 3 bits   : Timeout in Minutes 2
+	private int             increment1;        // 11 bits  : Slot Increment 1
+	private int             offset2;           // 12 bits  : Slot Offset 2
+	private int             slots2;            // 4 bits   : Number of Slots 2
+	private int             timeout2;          // 3 bits   : Timeout in Minutes 2
+	private int             increment2;        // 11 bits  : Slot Increment 2
+	private int             offset3;           // 12 bits  : Slot Offset 3
+	private int             slots3;            // 4 bits   : Number of Slots 3
+	private int             timeout3;          // 3 bits   : Timeout in Minutes 3
+	private int             increment3;        // 11 bits  : Slot Increment 3
+	private int             offset4;           // 12 bits  : Slot Offset 4
+	private int             slots4;            // 4 bits   : Number of Slots 4
+	private int             timeout4;          // 3 bits   : Timeout in Minutes 4
+	private int             increment4;        // 11 bits  : Slot Increment 4
+	private int             spare2;            // 0-6 bits : Spare
+	private int             num_cmds;          // Number of commands received
 
-    public int spare1() { return this.spare1; }
-    public int offset1() { return this.offset1; }
-    public int slots1() { return this.slots1; }
-    public int timeout1() { return this.timeout1; }
-    public int increment1() { return this.increment1; }
-    public int offset2() { return this.offset2; }
-    public int slots2() { return this.slots2; }
-    public int timeout2() { return this.timeout2; }
-    public int increment2() { return this.increment2; }
-    public int offset3() { return this.offset3; }
-    public int slots3() { return this.slots3; }
-    public int timeout3() { return this.timeout3; }
-    public int increment3() { return this.increment3; }
-    public int offset4() { return this.offset4; }
-    public int slots4() { return this.slots4; }
-    public int timeout4() { return this.timeout4; }
-    public int increment4() { return this.increment4; }
-    public int spare2() { return this.spare2; }
-    public int num_cmds() { return this.num_cmds; }
-    
+	public int getSpare1() { return this.spare1; }
+	public int getOffset1() { return this.offset1; }
+	public int getSlots1() { return this.slots1; }
+	public int getTimeout1() { return this.timeout1; }
+	public int getIncrement1() { return this.increment1; }
+	public int getOffset2() { return this.offset2; }
+	public int getSlots2() { return this.slots2; }
+	public int getTimeout2() { return this.timeout2; }
+	public int getIncrement2() { return this.increment2; }
+	public int getOffset3() { return this.offset3; }
+	public int getSlots3() { return this.slots3; }
+	public int getTimeout3() { return this.timeout3; }
+	public int getIncrement3() { return this.increment3; }
+	public int getOffset4() { return this.offset4; }
+	public int getSlots4() { return this.slots4; }
+	public int getTimeout4() { return this.timeout4; }
+	public int getIncrement4() { return this.increment4; }
+	public int getSpare2() { return this.spare2; }
+	public int getNumCmds() { return this.num_cmds; }
+
 	public Message20()
 	{
 		super();

@@ -61,7 +61,7 @@ public class VdmTest {
 	@Test
 	public void testMissingPart1() throws Exception {
 		try {
-			int result = vdm_message.add("!AIVDM,2,2,9,B,5CQp88888888880,2*79");
+			vdm_message.add("!AIVDM,2,2,9,B,5CQp88888888880,2*79");
 			fail("Expected OutOfSequenceException");
 		} catch (OutOfSequenceException e) {
 			assert (true);
@@ -70,9 +70,8 @@ public class VdmTest {
 
 	@Test
 	public void testBrokenLine() {
-		int result;
 		try {
-			result = vdm_message.add("!AIVDM577W7=42@E5eI8L?F20<P4pN0P4pN04r0P4V2216H`PBD5O`0BU0BH0j,0*3E");
+			vdm_message.add("!AIVDM577W7=42@E5eI8L?F20<P4pN0P4pN04r0P4V2216H`PBD5O`0BU0BH0j,0*3E");
 			fail("Expected Exception");
 		} catch (ChecksumFailedException e) { 
 		} catch (VDMSentenceException e) {

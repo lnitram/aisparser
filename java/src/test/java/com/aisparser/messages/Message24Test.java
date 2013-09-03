@@ -35,16 +35,16 @@ public class Message24Test {
 		assertEquals( "msgid", 24, msg.msgid());
 		assertEquals( "repeat", 0, msg.repeat());
 		assertEquals( "userid", 338060014, msg.userid());
-		assertEquals("name", "APRIL MARU@@@@@@@@@@", msg.name());
-		assertEquals("ship_type", 37, msg.ship_type());
-		assertEquals("vendor_id", "@@@@@@@", msg.vendor_id());
-		assertEquals("callsign", "@@@@@@@", msg.callsign());
-		assertEquals("dim_bow", 2, msg.dim_bow());
-		assertEquals("dim_stern", 5, msg.dim_stern());
-		assertEquals("dim_port", 1, msg.dim_port());
-		assertEquals("dim_starboard", 2, msg.dim_starboard());
-		assertEquals("spare", 0, msg.spare());
-		assertEquals("flags", 3, msg.flags());
+		assertEquals("name", "APRIL MARU@@@@@@@@@@", msg.getName());
+		assertEquals("ship_type", 37, msg.getShipType());
+		assertEquals("vendor_id", "@@@@@@@", msg.getVendorId());
+		assertEquals("callsign", "@@@@@@@", msg.getCallsign());
+		assertEquals("dim_bow", 2, msg.getDimBow());
+		assertEquals("dim_stern", 5, msg.getDimStern());
+		assertEquals("dim_port", 1, msg.getDimPort());
+		assertEquals("dim_starboard", 2, msg.getDimStarboard());
+		assertEquals("spare", 0, msg.getSpare());
+		assertEquals("flags", 3, msg.getFlags());
 	}
 
 	@Test

@@ -30,9 +30,9 @@ public class Message12Test {
 		assertEquals( "msgid", 12, msg.msgid());
 		assertEquals( "repeat", 0, msg.repeat());
 		assertEquals( "userid", 3669987, msg.userid());
-		assertEquals( "sequence", 0, msg.sequence());
-		assertEquals( "destination", 0, msg.destination());
-		assertEquals( "retransmit", 1, msg.retransmit());
-		assertEquals( "message", "!WEATHER ALERT! ", msg.message());
+		assertEquals( "sequence", 0, msg.getSequence());
+		assertEquals( "destination", 0, msg.getDestination());
+		assertEquals( "retransmit", 1, msg.getRetransmit());
+		assertEquals( "message", "!WEATHER ALERT! ", msg.getMessage());
 	}
 }

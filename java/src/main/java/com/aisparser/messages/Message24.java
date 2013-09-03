@@ -19,35 +19,35 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * 
  */
 public class Message24 extends Messages {
-    private int            part_number;       // 2 bits   : Part Number
+	private int            part_number;       // 2 bits   : Part Number
 
-    //!< Message 24A 
-    private String         name;              // 120 bits : Ship Name in ASCII
+	//!< Message 24A 
+	private String         name;              // 120 bits : Ship Name in ASCII
 
-    //!< Message 24B 
-    private int            ship_type;         // 8 bits   : Type of Ship and Cargo
-    private String         vendor_id;         // 42 bits  : Vendor ID in ASCII
-    private String         callsign;          // 42 bits  : Callsign in ASCII
-    private int            dim_bow;           // 9 bits   : GPS Ant. Distance from Bow
-    private int            dim_stern;         // 9 bits   : GPS Ant. Distance from Stern
-    private int            dim_port;          // 6 bits   : GPS Ant. Distance from Port
-    private int            dim_starboard;     // 6 bits   : GPS Ant. Distance from Starboard
-    private int            spare;             // 6 bits   : Spare
+	//!< Message 24B 
+	private int            ship_type;         // 8 bits   : Type of Ship and Cargo
+	private String         vendor_id;         // 42 bits  : Vendor ID in ASCII
+	private String         callsign;          // 42 bits  : Callsign in ASCII
+	private int            dim_bow;           // 9 bits   : GPS Ant. Distance from Bow
+	private int            dim_stern;         // 9 bits   : GPS Ant. Distance from Stern
+	private int            dim_port;          // 6 bits   : GPS Ant. Distance from Port
+	private int            dim_starboard;     // 6 bits   : GPS Ant. Distance from Starboard
+	private int            spare;             // 6 bits   : Spare
 
-    private int            flags;             // A/B flags - A = 1  B = 2  Both = 3  
-    
-    public int part_number() { return this.part_number; }
-    public String name() { return this.name; }
-    public int ship_type() { return this.ship_type; }
-    public String vendor_id() { return this.vendor_id; }
-    public String callsign() { return this.callsign; }
-    public int dim_bow() { return this.dim_bow; }
-    public int dim_stern() { return this.dim_stern; }
-    public int dim_port() { return this.dim_port; }
-    public int dim_starboard() { return this.dim_starboard; }
-    public int spare() { return this.spare; }
-    public int flags() { return this.flags; }
-    
+	private int            flags;             // A/B flags - A = 1  B = 2  Both = 3  
+
+	public int getPartNumber() { return this.part_number; }
+	public String getName() { return this.name; }
+	public int getShipType() { return this.ship_type; }
+	public String getVendorId() { return this.vendor_id; }
+	public String getCallsign() { return this.callsign; }
+	public int getDimBow() { return this.dim_bow; }
+	public int getDimStern() { return this.dim_stern; }
+	public int getDimPort() { return this.dim_port; }
+	public int getDimStarboard() { return this.dim_starboard; }
+	public int getSpare() { return this.spare; }
+	public int getFlags() { return this.flags; }
+
 	public Message24()
 	{
 		super();

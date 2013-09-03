@@ -27,14 +27,14 @@ public class Message20Test {
 			fail(e.getMessage());
 		}
 
-		assertEquals("num_cmds", 1, msg.num_cmds());
+		assertEquals("num_cmds", 1, msg.getNumCmds());
 		assertEquals( "msgid", 20, msg.msgid());
 		assertEquals( "repeat", 0, msg.repeat());
 		assertEquals( "userid", 3669987, msg.userid());
-		assertEquals("spare1", 0, msg.spare1());
-		assertEquals("offset1", 790, msg.offset1());
-		assertEquals("slots1", 5, msg.slots1());
-		assertEquals("timeout1", 7, msg.timeout1());
-		assertEquals("increment1", 225, msg.increment1());
+		assertEquals("spare1", 0, msg.getSpare1());
+		assertEquals("offset1", 790, msg.getOffset1());
+		assertEquals("slots1", 5, msg.getSlots1());
+		assertEquals("timeout1", 7, msg.getTimeout1());
+		assertEquals("increment1", 225, msg.getIncrement1());
 	}
 }

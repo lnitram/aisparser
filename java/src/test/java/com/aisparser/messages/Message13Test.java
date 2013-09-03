@@ -28,12 +28,12 @@ public class Message13Test {
 			fail(e.getMessage());
 		}
 
-		assertEquals( "num_acks", 1, msg.num_acks());
+		assertEquals( "num_acks", 1, msg.getNumAcks());
 		assertEquals( "msgid", 13, msg.msgid());
 		assertEquals( "repeat", 0, msg.repeat());
 		assertEquals( "userid", 3669987, msg.userid());
-		assertEquals( "spare", 0, msg.spare());
-		assertEquals( "destid_1", 316005498, msg.destid_1());
-		assertEquals( "sequence_1", 0, msg.sequence_1());
+		assertEquals( "spare", 0, msg.getSpare());
+		assertEquals( "destid_1", 316005498, msg.getDestId1());
+		assertEquals( "sequence_1", 0, msg.getSequence1());
 	}
 }

@@ -23,44 +23,44 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * 
  */
 public class Message18 extends Messages {
-    private int             regional1;         // 8 bits   : Regional Bits
-    private int             sog;               // 10 bits  : Speed Over Ground
-    private int             pos_acc;           // 1 bit    : Position Accuracy
-    private Position        pos;               //          : Lat/Long 1/100000 minute
-    private int             cog;               // 12 bits  : Course Over Ground
-    private int             true_heading;      // 9 bits   : True Heading
-    private int             utc_sec;           // 6 bits   : UTC Seconds
-    private int             regional2;         // 2 bits   : Regional Bits
-    private int             unit_flag;         // 1 bit    : Class B CS Flag
-    private int             display_flag;      // 1 bit    : Integrated msg14 Display Flag
-    private int             dsc_flag;          // 1 bit    : DSC Capability flag
-    private int             band_flag;         // 1 bit    : Marine Band Operation Flag
-    private int             msg22_flag;        // 1 bit    : Msg22 Frequency Management Flag
-    private int             mode_flag;         // 1 bit    : Autonomous Mode Flag
-    private int             raim;              // 1 bit    : RAIM Flag
-    private int             comm_state;        // 1 bit    : Comm State Flag
-    private Sotdma sotdma_state = null;
-    private Itdma itdma_state = null;
+	private int             regional1;         // 8 bits   : Regional Bits
+	private int             sog;               // 10 bits  : Speed Over Ground
+	private int             pos_acc;           // 1 bit    : Position Accuracy
+	private Position        pos;               //          : Lat/Long 1/100000 minute
+	private int             cog;               // 12 bits  : Course Over Ground
+	private int             true_heading;      // 9 bits   : True Heading
+	private int             utc_sec;           // 6 bits   : UTC Seconds
+	private int             regional2;         // 2 bits   : Regional Bits
+	private int             unit_flag;         // 1 bit    : Class B CS Flag
+	private int             display_flag;      // 1 bit    : Integrated msg14 Display Flag
+	private int             dsc_flag;          // 1 bit    : DSC Capability flag
+	private int             band_flag;         // 1 bit    : Marine Band Operation Flag
+	private int             msg22_flag;        // 1 bit    : Msg22 Frequency Management Flag
+	private int             mode_flag;         // 1 bit    : Autonomous Mode Flag
+	private int             raim;              // 1 bit    : RAIM Flag
+	private int             comm_state;        // 1 bit    : Comm State Flag
+	private Sotdma sotdma_state = null;
+	private Itdma itdma_state = null;
 
-    public int regional1() { return this.regional1; }
-    public int sog() { return this.sog; }
-    public int pos_acc() { return this.pos_acc; }
-    public long longitude() { return this.pos.longitude(); }
-    public long latitude() { return this.pos.latitude(); }
-    public int cog() { return this.cog; }
-    public int true_heading() { return this.true_heading; }
-    public int utc_sec() { return this.utc_sec; }
-    public int regional2() { return this.regional2; }
-    public int unit_flag() { return this.unit_flag; }
-    public int display_flag() { return this.display_flag; }
-    public int dsc_flag() { return this.dsc_flag; }
-    public int band_flag() { return this.band_flag; }
-    public int msg22_flag() { return this.msg22_flag; }
-    public int mode_flag() { return this.mode_flag; }
-    public int raim() { return this.raim; }
-    public int comm_state() { return this.comm_state; }
-    public Sotdma sotdma_state() { return this.sotdma_state; }
-    public Itdma itdma_state() { return this.itdma_state; }
+	public int getRegional1() { return this.regional1; }
+	public int getSog() { return this.sog; }
+	public int getPosAcc() { return this.pos_acc; }
+	public long getLon() { return this.pos.longitude(); }
+	public long getLat() { return this.pos.latitude(); }
+	public int getCog() { return this.cog; }
+	public int getTrueHeading() { return this.true_heading; }
+	public int getUtcSec() { return this.utc_sec; }
+	public int getRegional2() { return this.regional2; }
+	public int getUnitFlag() { return this.unit_flag; }
+	public int getDisplayFlag() { return this.display_flag; }
+	public int getDscFlag() { return this.dsc_flag; }
+	public int getBandFlag() { return this.band_flag; }
+	public int getMsg22Flag() { return this.msg22_flag; }
+	public int getModeFlag() { return this.mode_flag; }
+	public int getRaim() { return this.raim; }
+	public int getCommState() { return this.comm_state; }
+	public Sotdma getSotdmaState() { return this.sotdma_state; }
+	public Itdma getItdmaState() { return this.itdma_state; }
 
 	public Message18()
 	{
