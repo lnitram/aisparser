@@ -20,20 +20,20 @@ import com.aisparser.exception.SixbitsExhaustedException;
  * 
  */
 public class Message06 extends Messages {
-    private int            sequence;          // 2 bits   : Sequence number
-    private long           destination;       // 30 bits  : Destination MMSI
-    private int            retransmit;        // 1 bit    : Retransmit
-    private int            spare;             // 1 bit    : Spare
-    private int            app_id;            // 16 bits  : Application ID
-    private Sixbit         data;              // 960 bits : Data payload
+	private int            sequence;          // 2 bits   : Sequence number
+	private long           destination;       // 30 bits  : Destination MMSI
+	private int            retransmit;        // 1 bit    : Retransmit
+	private int            spare;             // 1 bit    : Spare
+	private int            app_id;            // 16 bits  : Application ID
+	private Sixbit         data;              // 960 bits : Data payload
 
-    public int sequence() { return this.sequence; }
-    public long destination() { return this.destination; }
-    public int retransmit() { return this.retransmit; }
-    public int spare() { return this.spare; }
-    public int app_id() { return this.app_id; }
-    public Sixbit data() { return this.data; }
-    
+	public int getSequence() { return this.sequence; }
+	public long getDestination() { return this.destination; }
+	public int getRetransmit() { return this.retransmit; }
+	public int getSpare() { return this.spare; }
+	public int getAppId() { return this.app_id; }
+	public Sixbit getData() { return this.data; }
+
 	public Message06()
 	{
 		super();
@@ -52,13 +52,13 @@ public class Message06 extends Messages {
 
 		super.parse( 6, six_state );
 
-	    this.sequence     = (int)   six_state.getInt(2);
-	    this.destination  = (long)  six_state.getInt(30);
-	    this.retransmit   = (int)   six_state.getInt(1);
-	    this.spare        = (int)   six_state.getInt(1);
-	    this.app_id       = (int)   six_state.getInt(16);
+		this.sequence     = (int)   six_state.getInt(2);
+		this.destination  = (long)  six_state.getInt(30);
+		this.retransmit   = (int)   six_state.getInt(1);
+		this.spare        = (int)   six_state.getInt(1);
+		this.app_id       = (int)   six_state.getInt(16);
 
-	    /* Store the remaining payload of the packet for further processing */
+		/* Store the remaining payload of the packet for further processing */
 		this.data = six_state;
 
 	}

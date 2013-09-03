@@ -26,7 +26,7 @@ public class Message06Test {
 		try {
 			result = vdm_message.add("");
 			assertEquals( "vdm add failed", 0, result );
-			 
+ 
 			msg.parse( vdm_message.sixbit() );
 		} catch (Exception e) {
 			fail(e.getMessage());
