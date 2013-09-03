@@ -94,10 +94,30 @@ public class Message05 extends Message {
 		this.etaMinute    = (long) six_state.getInt(6);
 		this.draught      = (int)  six_state.getInt(8);
 		this.dest         =        six_state.getString(120);
+		this.dte          = (int)  six_state.getInt(1);
+		this.spare        = (int)  six_state.getInt(1);
 	}
 	
 	public Map<String,Object> getMap() {
 		Map<String,Object> m = super.getMap();
+		m.put("version", this.version);
+		m.put("imo", this.imo);
+		m.put("callsign", this.callsign);
+		m.put("name", this.name);
+		m.put("ship_type", this.ship_type);
+		m.put("dim_bow", this.dim_bow);
+		m.put("dim_stern", this.dim_stern);
+		m.put("dim_port", this.dim_port);
+		m.put("dim_starboard", this.dim_starboard);
+		m.put("pos_type", this.pos_type);
+		m.put("eta_month", this.etaMonth);
+		m.put("eta_day", this.etaDay);
+		m.put("eta_hour", this.etaHour);
+		m.put("eta_minute", this.etaMinute);
+		m.put("draught", this.draught);
+		m.put("dest", this.dest);
+		m.put("dte", this.dte);
+		m.put("spare", this.spare);
 		return m;
 	}
 }
