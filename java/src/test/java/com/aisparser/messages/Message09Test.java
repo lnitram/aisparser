@@ -37,9 +37,10 @@ public class Message09Test {
 		assertEquals("latitude", 23086695, msg.getLat());
 		assertEquals("cog", 1962, msg.getCog());
 		assertEquals("utc_sec", 10, msg.getUtcSec());
-		assertEquals("regional", 0, msg.getRegional());
+		assertEquals("alt-sensor",0,msg.getAltSensor());
+		assertEquals("spare1",0,msg.getSpare1());
 		assertEquals("dte", 1, msg.getDte());
-		assertEquals("spare", 0, msg.getSpare());
+		assertEquals("spare2", 0, msg.getSpare2());
 		assertEquals("assigned", 0, msg.getAssigned());
 		assertEquals("raim", 0, msg.getRaim());
 		assertEquals("comm_state", 0, msg.getCommState());

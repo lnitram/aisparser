@@ -31,9 +31,10 @@ public class Message09 extends Message {
 	private Position       pos;               //          : Lat/Long 1/100000 minute
 	private int            cog;               // 12 bits  : Course Over Ground
 	private int            utc_sec;           // 6 bits   : UTC Seconds
-	private int            regional;          // 8 bits   : Regional bits
+	private int            alt_sensor;       // 1 bit altitude sensor
+	private int            spare1;          // 8 bits   : spare
 	private int            dte;               // 1 bit    : DTE flag
-	private int            spare;             // 3 bits   : Spare
+	private int            spare2;             // 3 bits   : Spare
 	private int            assigned;          // 1 bit    : Assigned mode flag
 	private int            raim;              // 1 bit    : RAIM flag
 	private int            comm_state;        // 1 bit    : Comm State Flag
@@ -47,9 +48,10 @@ public class Message09 extends Message {
 	public long getLat() { return this.pos.latitude(); }
 	public int getCog() { return this.cog; }
 	public int getUtcSec() { return this.utc_sec; }
-	public int getRegional() { return this.regional; }
+	public int getAltSensor() {return this.alt_sensor;}
+	public int getSpare1() { return this.spare1; }
 	public int getDte() { return this.dte; }
-	public int getSpare() { return this.spare; }
+	public int getSpare2() { return this.spare2; }
 	public int getAssigned() { return this.assigned; }
 	public int getRaim() { return this.raim; }
 	public int getCommState() { return this.comm_state; }
@@ -84,9 +86,10 @@ public class Message09 extends Message {
 
     	this.cog        = (int)   six_state.getInt(12);
     	this.utc_sec    = (int)   six_state.getInt(6);
-    	this.regional   = (int)  six_state.getInt(8);
+    	this.alt_sensor = (int)   six_state.getInt(1);
+    	this.spare1     = (int)  six_state.getInt(7);
     	this.dte        = (int)  six_state.getInt(1);
-    	this.spare      = (int)  six_state.getInt(3);
+    	this.spare2      = (int)  six_state.getInt(3);
     	this.assigned   = (int)  six_state.getInt(1);
     	this.raim       = (int)  six_state.getInt(1);
     	this.comm_state = (int)  six_state.getInt(1);
